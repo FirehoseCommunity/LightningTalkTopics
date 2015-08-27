@@ -18,8 +18,13 @@
         <li><%= link_to "theFirehoseProject", "http://www.thefirehoseproject.com/", :target => "_blank" %></li>
         <li><%= link_to "Firehose Community", "http://community.thefirehoseproject.com/", :target => "_blank" %></li>
         <li><%= link_to "About", about_path %></li>
-        <li><%= link_to "Sign Up", new_user_registration_path %></li>
-        <li><%= link_to "Log In", new_user_session_path %></li>
+        <% if user_signed_in? %>
+          <li><%= link_to "My Profile", "#" %></li>
+          <li><%= link_to "Log Out", destroy_user_session_path, method: :delete %></li>
+        <% else %>
+          <li><%= link_to "Sign Up", new_user_registration_path %></li>
+          <li><%= link_to "Log In", new_user_session_path %></li>
+        <% end %>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->

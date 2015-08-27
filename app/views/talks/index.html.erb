@@ -2,4 +2,9 @@
 <br />
 <div class="col-xs-10 col-xs-offset-1">
   <h1>Hello to the Firehose Project lightning talks</h1>
+  <% if user_signed_in? %>
+    <div>
+      <h3><%= link_to "Add a new topic", "#" %></h3>
+    </div>
+  <% end %>
 </div>

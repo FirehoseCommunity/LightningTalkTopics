@@ -19,3 +19,5 @@ Build the database
 
 Install the gems
 `bundle install`
+
+Change the default_url_options (config/development) to 3030 for Vagrant only.

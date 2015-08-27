@@ -15,11 +15,11 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="firehose-menu-collapse-1">
       <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to "theFirehoseProject", "#" %></li>
-        <li><%= link_to "Firehose Community", "#" %></li>
-        <li><%= link_to "About", "#" %></li>
-        <li><%= link_to "Sign Up", "#" %></li>
-        <li><%= link_to "Log In", "#"%></li>
+        <li><%= link_to "theFirehoseProject", "http://www.thefirehoseproject.com/", :target => "_blank" %></li>
+        <li><%= link_to "Firehose Community", "http://community.thefirehoseproject.com/", :target => "_blank" %></li>
+        <li><%= link_to "About", about_path %></li>
+        <li><%= link_to "Sign Up", new_user_registration_path %></li>
+        <li><%= link_to "Log In", new_user_session_path %></li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->

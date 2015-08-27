@@ -16,3 +16,6 @@ Then you will want to copy the example database yml file to the proper location.
 
 Build the database
 `rake db:create:all`
+
+Install the gems
+`bundle install`

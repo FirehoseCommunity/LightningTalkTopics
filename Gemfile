@@ -13,6 +13,8 @@ gem 'jbuilder', '~> 2.0'
 gem 'bootstrap-sass'
 # User authentication
 gem 'devise'
+# Simple form
+gem 'simple_form'
 
 gem 'sdoc', '~> 0.4.0', group: :doc
 

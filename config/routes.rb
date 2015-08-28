@@ -4,4 +4,6 @@ Rails.application.routes.draw do
   root 'talks#index'
   get '/about', to: 'talks#about'
 
+  resources :talks
+
 end

@@ -1,0 +1,8 @@
+<div class="col-xs-10 col-xs-offset-1">
+  <h1>Enter the details of the topic</h1>
+  <%= simple_form_for @talk do |f| %>
+    <%= f.input :topic %><br />
+    <%= f.input :description %><br />
+    <%= f.submit 'Submit', class: 'btn btn-primary' %>
+  <% end %>
+</div>

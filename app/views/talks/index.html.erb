@@ -1,11 +1,6 @@
 <br />
 <br />
 <div class="col-xs-10 col-xs-offset-1">
-  <% if user_signed_in? %>
-    <div>
-      <h3><%= link_to "Add a new topic", "#" %></h3>
-    </div>
-  <% end %>
   <% @talks.each do |talk| %>
     <h1><%= talk.topic %></h1>
     <h2><%= talk.description %></h2>

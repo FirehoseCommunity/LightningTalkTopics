@@ -19,6 +19,7 @@
         <li><%= link_to "Firehose Community", "http://community.thefirehoseproject.com/", :target => "_blank" %></li>
         <li><%= link_to "About", about_path %></li>
         <% if user_signed_in? %>
+          <li><%= link_to "Add a new topic", new_talk_path %></li>
           <li><%= link_to "My Profile", "#" %></li>
           <li><%= link_to "Log Out", destroy_user_session_path, method: :delete %></li>
         <% else %>

@@ -8,7 +8,15 @@ class TalksController < ApplicationController
     @talk = Talk.new
   end
 
+  def create
+    Talk.create(talk_params)
+    redirect_to root_path
+  end
+
   private
 
+  def talk_params
+    params.require(:talks).permit(:topic, :description)
+  end
 
 end

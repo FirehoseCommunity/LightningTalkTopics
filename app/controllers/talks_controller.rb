@@ -27,6 +27,12 @@ class TalksController < ApplicationController
     redirect_to root_path
   end
 
+  def destroy
+    @talk = Talk.find(params[:id])
+    @talk.destroy
+    redirect_to root_path
+  end
+
   private
 
   def talk_params

@@ -42,7 +42,11 @@ class TalksController < ApplicationController
 
   def assigned
     @talk = Talk.find(params[:id])
-    @talk.update_attribute(:is_assigned, true)
+    if @talk.is_assigned == false
+      @talk.update_attribute(:is_assigned, true)
+    else
+      @talk.update_attribute(:is_assigned, false)
+    end
     redirect_to(talks_path)
   end
 

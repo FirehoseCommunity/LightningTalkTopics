@@ -14,8 +14,9 @@ Then you will want to copy the example database yml file to the proper location.
 
 `cp config/database.example.yml config/database.yml`
 
-Build the database
-`rake db:create:all`
+Build and Migrate the database
+* `rake db:create:all`
+* `rake db:migrate`
 
 Install the gems
 `bundle install`

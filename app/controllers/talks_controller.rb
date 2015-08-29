@@ -40,6 +40,12 @@ class TalksController < ApplicationController
     redirect_to(talks_path)
   end
 
+  def assigned
+    @talk = Talk.find(params[:id])
+    @talk.update_attribute(:is_assigned, true)
+    redirect_to(talks_path)
+  end
+
   private
 
   def talk_params

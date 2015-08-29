@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :talks do
     member do
       post 'upvote'
+      patch 'assigned'
     end
   end
 

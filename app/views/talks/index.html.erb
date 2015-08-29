@@ -8,7 +8,7 @@
       <% if talk.description.length > 80 %>
         <p><%= link_to "Read More...", talk_path(talk) %></p>
       <% end %>
-      <p>Is the talk assigned?  <%= talk.is_assigned %><br />
+      <p>Is the talk assigned?  <%= link_to "Assingned?", assigned_talk_path(talk), method: :patch %><br />
       <h4 class="pull-left"><%= pluralize(talk.votes.count, "vote") %>&nbsp</h4>
       <p class="pull-right"><%= button_to '+1', upvote_talk_path(talk), method: :post %></p>
     </div>

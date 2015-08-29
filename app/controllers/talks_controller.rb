@@ -1,5 +1,5 @@
 class TalksController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create, :edit]
+  before_action :authenticate_user!, only: [:new, :create, :edit, :assigned]
 
   def index
     @talks = Talk.all

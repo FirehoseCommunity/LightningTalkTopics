@@ -4,6 +4,8 @@
   <h3><%= @talk.description %></h3>
   <br />
   <p>Assigned to speaker? <%= @talk.is_assigned %></p>
-  <%= link_to "Edit", edit_talk_path, class: "btn btn-primary" %>
-  <%= link_to "Destroy", talk_path(@talk), method: :delete, data:{confirm: "Are you sure you want to delete this?"}, class: "btn btn-danger" %>
+  <% if current_user && current_user == @talk.user %>
+    <%= link_to "Edit", edit_talk_path, class: "btn btn-primary" %>
+    <%= link_to "Destroy", talk_path(@talk), method: :delete, data:{confirm: "Are you sure you want to delete this?"}, class: "btn btn-danger" %>
+  <% end %>
 </div>

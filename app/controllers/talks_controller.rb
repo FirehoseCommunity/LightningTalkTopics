@@ -1,4 +1,5 @@
 class TalksController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :create, :edit]
 
   def index
     @talks = Talk.all
@@ -9,7 +10,7 @@ class TalksController < ApplicationController
   end
 
   def create
-    Talk.create(talk_params)
+    current_user.talks.create(talk_params)
     redirect_to root_path
   end
 

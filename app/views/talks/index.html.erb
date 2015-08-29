@@ -2,7 +2,7 @@
 <br />
 <div class="col-xs-10 col-xs-offset-1">
   <% @talks.each do |talk| %>
-    <h1><%= talk.topic %></h1>
+    <h1><%= link_to talk.topic, talk_path(talk) %></h1>
     <h2><%= talk.description %></h2>
     <h2><%= talk.is_assigned %></h2>
   <% end %>

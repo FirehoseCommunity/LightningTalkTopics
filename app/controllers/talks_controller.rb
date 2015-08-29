@@ -57,8 +57,4 @@ class TalksController < ApplicationController
     params.require(:talk).permit(:topic, :description)
   end
 
-  # def assigned_params
-  #   params.require(:talk).permit(:assigned_to).merge(user_id: current_user.id)
-  # end
-
 end

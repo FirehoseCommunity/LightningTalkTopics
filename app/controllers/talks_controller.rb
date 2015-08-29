@@ -17,6 +17,10 @@ class TalksController < ApplicationController
     @talk = Talk.find(params[:id])
   end
 
+  def edit
+    @talk = Talk.find(params[:id])
+  end
+
   private
 
   def talk_params

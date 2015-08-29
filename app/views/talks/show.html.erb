@@ -4,4 +4,5 @@
   <h3><%= @talk.description %></h3>
   <br />
   <p>Assigned to speaker? <%= @talk.is_assigned %></p>
+  <%= link_to "Edit Topic Information", edit_talk_path, class: "btn btn-primary" %>
 </div>

@@ -42,10 +42,11 @@ class TalksController < ApplicationController
 
   def assigned
     @talk = Talk.find(params[:id])
+    user = current_user.id
     if @talk.is_assigned == false
-      @talk.update_attribute(:is_assigned, true)
+      @talk.update_attributes(is_assigned: true, assigned_to: user)
     else
-      @talk.update_attribute(:is_assigned, false)
+      @talk.update_attributes(is_assigned: false, assigned_to: nil)
     end
     redirect_to(talks_path)
   end
@@ -55,5 +56,9 @@ class TalksController < ApplicationController
   def talk_params
     params.require(:talk).permit(:topic, :description)
   end
+
+  # def assigned_params
+  #   params.require(:talk).permit(:assigned_to).merge(user_id: current_user.id)
+  # end
 
 end

@@ -4,6 +4,10 @@ Rails.application.routes.draw do
   root 'talks#index'
   get '/about', to: 'talks#about'
 
-  resources :talks
+  resources :talks do
+    member do
+      post 'upvote'
+    end
+  end
 
 end

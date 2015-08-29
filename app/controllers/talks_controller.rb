@@ -34,6 +34,12 @@ class TalksController < ApplicationController
     redirect_to root_path
   end
 
+  def upvote
+    @talk = Talk.find(params[:id])
+    @talk.votes.create
+    redirect_to(talks_path)
+  end
+
   private
 
   def talk_params

@@ -4,6 +4,8 @@
   <% @talks.each do |talk| %>
     <h1><%= link_to talk.topic, talk_path(talk) %></h1>
     <h2><%= talk.description %></h2>
-    <h2><%= talk.is_assigned %></h2>
+    <p>Is the talk assigned?  <%= talk.is_assigned %><br />
+    <p><%= pluralize(talk.votes.count, "vote") %></p>
+    <p><%= button_to '+1', upvote_talk_path(talk), method: :post %></p>
   <% end %>
 </div>

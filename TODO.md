@@ -8,4 +8,4 @@
 * Add schedule time to talk topic
 * Filter talk topics in ascending order
 * Two categories assigned and unassigned, place assigned topics to top of page
-* Setup Heroku for Firehose Community and push content
+<!-- * Setup Heroku for Firehose Community and push content -->

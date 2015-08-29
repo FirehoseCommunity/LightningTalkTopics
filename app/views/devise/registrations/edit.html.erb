@@ -6,6 +6,14 @@
     <%= devise_error_messages! %>
 
     <div class="field">
+      <%= f.text_field :first_name, autofocus: true, placeholder: "First Name", class: "form-control" %>
+    </div>
+    <br />
+    <div class="field">
+      <%= f.text_field :last_name, autofocus: true, placeholder: "Last Name", class: "form-control" %>
+    </div>
+    <br />
+    <div class="field">
       <%= f.email_field :email, autofocus: true, placeholder: "Email", class: "form-control" %>
     </div>
     <br />

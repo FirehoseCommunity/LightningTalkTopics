@@ -22,6 +22,19 @@
       <br />
       <h4 class="pull-left"><%= pluralize(talk.votes.count, "vote") %>&nbsp</h4>
       <p class="pull-right"><%= button_to '+1', upvote_talk_path(talk), method: :post %></p>
+      <div class='input-group date' id='datetimepicker1'>
+          <input type='text' class="form-control" />
+          <span class="input-group-addon">
+              <span class="glyphicon glyphicon-calendar"></span>
+          </span>
+      </div>
+      <script type="text/javascript">
+          $(function () {
+              $('#datetimepicker1').datetimepicker({
+                daysOfWeekDisabled: [0, 1, 2, 3, 4, 6, 7],
+              });
+          });
+      </script>
     </div>
   <% end %>
 </div>

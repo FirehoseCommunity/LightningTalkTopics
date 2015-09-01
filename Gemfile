@@ -15,6 +15,10 @@ gem 'bootstrap-sass'
 gem 'devise'
 # Simple form
 gem 'simple_form'
+# Required for Bootstrap DatePicker
+gem 'momentjs-rails', '>= 2.9.0'
+# Bootstrap DatePicker For Displaying Schedules
+gem 'bootstrap3-datetimepicker-rails', '~> 4.15.35'
 
 gem 'sdoc', '~> 0.4.0', group: :doc
 

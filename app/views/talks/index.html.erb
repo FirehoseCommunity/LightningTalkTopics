@@ -13,6 +13,7 @@
           <%= link_to "Assigned", assigned_talk_path(talk), method: :patch %>
           <i class="glyphicon glyphicon-star"></i>
         </p>
+        <p>Talk is assigned to: <%= talk.assigned_to %></p>
       <% else %>
         <p>
           <%= link_to "Unassigned", assigned_talk_path(talk), method: :patch %>
@@ -21,7 +22,7 @@
       <% end %>
       <br />
       <h4 class="pull-left"><%= pluralize(talk.votes.count, "vote") %>&nbsp</h4>
-      <p class="pull-right"><%= button_to '+1', upvote_talk_path(talk), method: :post %></p>
+      <p class="pull-right"><%= button_to '+1', upvote_talk_path(talk), class: "btn btn-sm btn-info", method: :post %></p>
     </div>
   <% end %>
 </div>

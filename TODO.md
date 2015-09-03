@@ -10,3 +10,4 @@
 * Two categories assigned and unassigned, place assigned topics to top of page
 <!-- * Setup Heroku for Firehose Community and push content -->
 <!-- * Add speaker when assigned on index page -->
+* Update CONTRIBUTOR.md file with setup and install instructions

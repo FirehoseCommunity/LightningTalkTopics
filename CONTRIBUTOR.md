@@ -1,7 +1,9 @@
-## Welcome to the Firehose Lightning Talks topics app
+## Welcome to the Firehose Lightning Talks App
 ### To contribute please follow the process detailed below.
 #### **Please listen to [this](https://devchat.tv/ruby-rogues/216-rr-code-review-culture-with-derek-prior) podcast episode before contributing!**
+We want a condusive, welcoming, accepting, and positive community and the podcast covers great information on how to be a positive and welcoming contributor. It's worth the listn, I promise.
 
+## Getting Started
 ##### Fork the repository
 [Reference link on how to fork a repo and clone.](http://community.thefirehoseproject.com/2015/08/19/How-To-Fork-A-Repo-And-Contribute.html)
 

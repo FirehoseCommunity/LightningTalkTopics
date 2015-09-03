@@ -20,7 +20,7 @@ The database is configured by default to use `postgres` and `password` as the us
 
 ##### Build and Migrate the database
 * `rake db:create`
-* `rake db:migrate`
+* `rake db:schema:load`
 
 ##### **Vagrant Only** Change the `default_url_options` to port 3030
 * Navigate to `config/environments/development.rb`

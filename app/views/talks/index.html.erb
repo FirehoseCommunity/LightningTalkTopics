@@ -1,7 +1,9 @@
 <br />
 <br />
 <!-- Start Scheduled Talk Section -->
-<%= render "partials/scheduledTalks" %>
+<% if upcoming_talk >= 1 %>
+  <%= render "partials/scheduledTalks" %>
+<% end %>
 <!-- End of Scheduled Talk Section -->
 <br class="clear" />
 <br />
@@ -11,7 +13,9 @@
 <br class="clear" />
 <br />
 <!-- Begin Previously Given Talks -->
-<%= render "partials/previousTalks" %>
+<% if previous_talk >= 1 %>
+  <%= render "partials/previousTalks" %>
+<% end %>
 <!-- End Previously Given Talks -->
 <br />
 <br />

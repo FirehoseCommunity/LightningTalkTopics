@@ -1,6 +1,6 @@
 ## Welcome to the Firehose Lightning Talks App
 ### To contribute please follow the process detailed below.
-#### **Please listen to [this](https://devchat.tv/ruby-rogues/216-rr-code-review-culture-with-derek-prior) podcast episode before contributing!**
+#### Please listen to [this](https://devchat.tv/ruby-rogues/216-rr-code-review-culture-with-derek-prior) podcast episode before contributing!
 We want a condusive, welcoming, accepting, and positive community and the podcast covers great information on how to be a positive and welcoming contributor. It's worth the listn, I promise.
 
 ## Getting Started
@@ -22,6 +22,14 @@ The database is configured by default to use `postgres` and `password` as the us
 * `rake db:create`
 * `rake db:schema:load`
 
-##### **Vagrant Only** Change the `default_url_options` to port 3030
+**Vagrant Only**
+##### Change the `default_url_options` to port 3030
 * Navigate to `config/environments/development.rb`
 * Change `config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }` to `config.action_mailer.default_url_options = { host: 'localhost', port: 3030 }`
+
+##### If you can't connect to localhost:3030
+* This is an issue because of the routing loopback issues within Vagrant
+* Instead of `rails s` run `rails s -b 0.0.0.0 -p 3000`
+
+## Did you find a problem or another _gotcha_?
+##### Submit a GitHub issue to let us know. If you found a solution, submit a pull request and we will review it, verify it, and merge it into master. 

@@ -18,9 +18,15 @@ We want a condusive, welcoming, accepting, and positive community and the podcas
 
 The database is configured by default to use `postgres` and `password` as the username and password. You will want to change these accordingly to your environment.
 
-##### Build and Migrate the database
+##### Build and Migrate the database (unpopulated database)
+_This will create the databases with zero users or topics_
 * `rake db:create`
 * `rake db:schema:load`
+
+##### Build and Migrate the database (populated database)
+_This will create the databases with 4 users (2 admins) and 12 topics_
+* `rake db:create`
+* `rake db:setup`
 
 **Vagrant Only**
 ##### Change the `default_url_options` to port 3030
@@ -32,4 +38,4 @@ The database is configured by default to use `postgres` and `password` as the us
 * Instead of `rails s` run `rails s -b 0.0.0.0 -p 3000`
 
 ## Did you find a problem or another _gotcha_?
-##### Submit a GitHub issue to let us know. If you found a solution, submit a pull request and we will review it, verify it, and merge it into master. 
+##### Submit a GitHub issue to let us know. If you found a solution, submit a pull request and we will review it, verify it, and merge it into master.

@@ -2,9 +2,5 @@
   <h1 class="col-xs-10 col-xs-offset-1 text-center">
     Upcoming scheduled talks!
   </h1>
-  <% @talks.order(:topic).each do |talk| %>
-    <% if talk.is_assigned == true && talk.speak_date != nil && talk.speak_date >= Date.today %>
-      <%= render talk %>
-    <% end %>
-  <% end %>
+  <%= render @scheduled_talks %>
 </div>

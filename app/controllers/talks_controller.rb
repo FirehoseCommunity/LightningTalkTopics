@@ -4,6 +4,7 @@ class TalksController < ApplicationController
   def index
     @unscheduled_talks = Talk.unscheduled
     @scheduled_talks = Talk.scheduled
+    @previous_talks = Talk.previous
   end
 
   def new

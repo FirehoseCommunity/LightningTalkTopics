@@ -4,4 +4,5 @@ class Talk < ActiveRecord::Base
 
   scope :unscheduled, -> { where(speak_date: nil).order(:topic) }
   scope :scheduled, -> { where('speak_date >= ?', Date.today).order(:topic) }
+  scope :previous, -> { where('speak_date < ?', Date.today).order(:topic) }
 end

@@ -2,7 +2,9 @@ class TalksController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :assigned]
 
   def index
-    @talks = Talk.all
+    @unscheduled_talks = Talk.unscheduled
+    @scheduled_talks = Talk.scheduled
+    @previous_talks = Talk.previous
   end
 
   def new

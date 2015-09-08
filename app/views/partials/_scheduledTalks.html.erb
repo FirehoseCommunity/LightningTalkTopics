@@ -2,30 +2,5 @@
   <h1 class="col-xs-10 col-xs-offset-1 text-center">
     Upcoming scheduled talks!
   </h1>
-  <% @talks.order(:topic).each do |talk| %>
-    <% if talk.is_assigned == true && talk.speak_date != nil && talk.speak_date >= Date.today %>
-      <div class="ice col-xs-12 col-md-4">
-        <h2><%= link_to talk.topic, talk_path(talk) %></h2>
-        <h4><%= truncate talk.description, length: 80 %></h4>
-        <% if talk.description.length > 80 %>
-          <p><%= link_to "Read More...", talk_path(talk) %></p>
-        <% end %>
-        <% if talk.is_assigned == true %>
-          <p>
-            <%= link_to "Assigned", assigned_talk_path(talk), method: :patch %>
-            <i class="glyphicon glyphicon-star"></i>
-          </p>
-          <p>Talk is assigned to: <%= talk.assigned_to %></p>
-        <% else %>
-          <p>
-            <%= link_to "Unassigned", assigned_talk_path(talk), method: :patch %>
-            <i class="glyphicon glyphicon-star-empty"></i>
-          </p><br />
-        <% end %>
-        <br />
-        <h4 class="pull-left"><%= pluralize(talk.votes.count, "vote") %>&nbsp</h4>
-        <p class="pull-right"><%= button_to '+1', upvote_talk_path(talk), class: "btn btn-sm btn-info", method: :post %></p>
-      </div>
-    <% end %>
-  <% end %>
+  <%= render @scheduled_talks %>
 </div>

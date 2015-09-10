@@ -16,6 +16,9 @@
       <i class="glyphicon glyphicon-star-empty"></i>
     </p><br />
   <% end %>
+  <% if talk.speak_date.present? %>
+    <p>Lightning talk date: <%= talk.speak_date %></p>
+  <% end %>
   <br />
   <h4 class="pull-left"><%= pluralize(talk.votes.count, "vote") %>&nbsp</h4>
   <p class="pull-right"><%= button_to '+1', upvote_talk_path(talk), class: "btn btn-sm btn-info", method: :post %></p>

@@ -44,7 +44,7 @@ class TalksController < ApplicationController
 
   def assigned
     @talk = Talk.find(params[:id])
-    user = current_user.first_name
+    user = "#{current_user.first_name} #{current_user.last_name.first}"
     if @talk.is_assigned == false
       @talk.update_attributes(is_assigned: true, assigned_to: user)
     else

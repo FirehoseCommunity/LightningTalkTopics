@@ -3,6 +3,6 @@ class Talk < ActiveRecord::Base
   belongs_to :user
 
   scope :unscheduled, -> { where(speak_date: nil).order(:topic) }
-  scope :scheduled, -> { where('speak_date >= ?', Date.today).order(:topic) }
+  scope :scheduled, -> { where('speak_date >= ?', Date.today).order(:speak_date).order(:topic) }
   scope :previous, -> { where('speak_date < ?', Date.today).order(:topic) }
 end

@@ -7,21 +7,23 @@
     <% end %>
   </div>
   <div class = 'clear'></div>
-  <% if talk.is_assigned == true %>
-    <p>
-      <%= link_to "Assigned", assigned_talk_path(talk), method: :patch %>
-      <i class="glyphicon glyphicon-star"></i>
-    </p>
-    <p>Talk is assigned to: <%= talk.assigned_to %></p>
-  <% else %>
-    <p>
-      <%= link_to "Unassigned", assigned_talk_path(talk), method: :patch %>
-      <i class="glyphicon glyphicon-star-empty"></i>
-    </p><br />
-  <% end %>
-  <% if talk.speak_date.present? %>
-    <p>Lightning talk date: <%= talk.speak_date %></p>
-  <% end %>
+  <div class = 'ice-assigned'>
+    <% if talk.is_assigned == true %>
+      <p>
+        <%= link_to "Assigned", assigned_talk_path(talk), method: :patch %>
+        <i class="glyphicon glyphicon-star"></i>
+      </p>
+      <p>Talk is assigned to: <%= talk.assigned_to %></p>
+    <% else %>
+      <p>
+        <%= link_to "Unassigned", assigned_talk_path(talk), method: :patch %>
+        <i class="glyphicon glyphicon-star-empty"></i>
+      </p><br />
+    <% end %>
+    <% if talk.speak_date.present? %>
+      <p>Lightning talk date: <%= talk.speak_date %></p>
+    <% end %>
+  </div>
   <br />
   <div class="pull-left">
     <blockquote><h4><%= pluralize(talk.votes.count, "vote") %>&nbsp</h4></blockquote>

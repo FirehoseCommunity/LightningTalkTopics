@@ -1,25 +1,34 @@
 <div class="ice col-xs-12 col-md-4">
-  <h2><%= link_to talk.topic, talk_path(talk) %></h2>
-  <h4><%= truncate talk.description, length: 80 %></h4>
-  <% if talk.description.length > 80 %>
-    <p><%= link_to "Read More...", talk_path(talk) %></p>
-  <% end %>
-  <% if talk.is_assigned == true %>
-    <p>
-      <%= link_to "Assigned", assigned_talk_path(talk), method: :patch %>
-      <i class="glyphicon glyphicon-star"></i>
-    </p>
-    <p>Talk is assigned to: <%= talk.assigned_to %></p>
-  <% else %>
-    <p>
-      <%= link_to "Unassigned", assigned_talk_path(talk), method: :patch %>
-      <i class="glyphicon glyphicon-star-empty"></i>
-    </p><br />
-  <% end %>
-  <% if talk.speak_date.present? %>
-    <p>Lightning talk date: <%= talk.speak_date %></p>
-  <% end %>
+  <h3 class = "ice-title"><%= link_to talk.topic, talk_path(talk) %></h3>
+  <div class = "ice-description">
+    <h4><%= truncate talk.description, length: 80 %></h4>
+    <% if talk.description.length > 80 %>
+      <p class = 'pull-right'><%= link_to "Read More...", talk_path(talk) %></p>
+    <% end %>
+  </div>
+  <div class = 'clear'></div>
+  <div class = 'ice-assigned'>
+    <% if talk.is_assigned == true %>
+      <p>
+        <%= link_to "Assigned", assigned_talk_path(talk), method: :patch %>
+        <i class="glyphicon glyphicon-star"></i>
+      </p>
+      <p>Talk is assigned to: <%= talk.assigned_to %></p>
+    <% else %>
+      <p>
+        <%= link_to "Unassigned", assigned_talk_path(talk), method: :patch %>
+        <i class="glyphicon glyphicon-star-empty"></i>
+      </p><br />
+    <% end %>
+    <% if talk.speak_date.present? %>
+      <p>Lightning talk date: <%= talk.speak_date %></p>
+    <% end %>
+  </div>
   <br />
-  <h4 class="pull-left"><%= pluralize(talk.votes.count, "vote") %>&nbsp</h4>
-  <p class="pull-right"><%= button_to '+1', upvote_talk_path(talk), class: "btn btn-sm btn-info", method: :post %></p>
+  <div class="pull-left">
+    <blockquote><h4><%= pluralize(talk.votes.count, "vote") %>&nbsp</h4></blockquote>
+  </div>
+  <div class="pull-right">
+    <p><%= button_to 'Vote', upvote_talk_path(talk), class: "btn btn-sm btn-info", method: :post %></p>
+  </div>
 </div>

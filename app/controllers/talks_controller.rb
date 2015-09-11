@@ -38,7 +38,18 @@ class TalksController < ApplicationController
 
   def upvote
     @talk = Talk.find(params[:id])
-    @talk.votes.create(:user_id => current_user.id)
+    @newvote = true
+
+    # Determines whether or not a user has upvoted the current topic
+    @talk.votes.each do |x|
+      if x.user_id == current_user.id
+        @newvote = false
+      end
+    end
+
+    if @newvote
+      @talk.votes.create(:user_id => current_user.id)
+    end
     redirect_to(talks_path)
   end
 

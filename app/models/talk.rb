@@ -7,6 +7,6 @@ class Talk < ActiveRecord::Base
   scope :previous, -> { where('speak_date < ?', Date.today).order(:topic) }
 
   # Add Validation
-  validates :topic, :presence => true, length: { minimum: 3 }
-  validates :description, :presence => true
+  validates :topic, presence: true, length: { minimum: 3 }
+  validates :description, presence: true
 end

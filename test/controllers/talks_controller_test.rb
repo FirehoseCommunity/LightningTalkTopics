@@ -7,11 +7,11 @@ class TalksControllerTest < ActionController::TestCase
     sign_in user
 
     assert_no_difference "Talk.count" do
-      post :create, :talk => {
-        :topic => ''
-        :description => nil
+      post :create, talk: {
+        topic: '',
+        description: nil
       }
     end
-    
+
   end
 end

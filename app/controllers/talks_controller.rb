@@ -12,8 +12,12 @@ class TalksController < ApplicationController
   end
 
   def create
-    current_user.talks.create(talk_params)
-    redirect_to root_path
+    @talk = current_user.talks.create(talk_params)
+    if @talk.valid?
+      redirect_to root_path
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
   def show

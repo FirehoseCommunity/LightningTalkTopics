@@ -1,5 +1,5 @@
 class TalksController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create, :edit, :assigned]
+  before_action :authenticate_user!, only: [:new, :create, :edit, :assigned, :upvote]
 
   def index
     @unscheduled_talks = Talk.unscheduled
@@ -41,8 +41,8 @@ class TalksController < ApplicationController
   end
 
   def upvote
-    @talk = Talk.find(params[:id])
-    @talk.votes.create
+    talk = Talk.find(params[:id])
+    current_user.upvote(talk)
     redirect_to(talks_path)
   end
 

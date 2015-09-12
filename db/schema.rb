@@ -54,6 +54,7 @@ ActiveRecord::Schema.define(version: 20150911024655) do
     t.integer  "talk_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "user_id"
   end
 
 end

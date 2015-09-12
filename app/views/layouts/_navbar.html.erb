@@ -16,7 +16,11 @@
     <div class="collapse navbar-collapse" id="firehose-menu-collapse-1">
       <ul class="nav navbar-nav navbar-right">
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Firehose Links<span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+            <span class="glyphicon glyphicon-link"></span>
+            Firehose Links
+            <span class="caret"></span>
+          </a>
           <ul class="dropdown-menu">
             <li><%= link_to "theFirehoseProject", "http://www.thefirehoseproject.com/", :target => "_blank" %></li>
             <li><%= link_to "Firehose Community", "http://community.thefirehoseproject.com/", :target => "_blank" %></li>
@@ -24,11 +28,27 @@
           </ul>
         </li>
         <% if user_signed_in? %>
-          <li><%= link_to "Add a new topic", new_talk_path %></li>
-          <li><%= link_to "Log Out", destroy_user_session_path, method: :delete %></li>
+          <li>
+            <%= link_to new_talk_path do %>
+              <span class="glyphicon glyphicon-plus"></span> Add a New Topic
+            <% end %>
+          </li>
+          <li>
+            <%= link_to destroy_user_session_path, method: :delete do%>
+              <span class="glyphicon glyphicon-log-out"></span> Log Out
+            <% end %>
+          </li>
         <% else %>
-          <li><%= link_to "Sign Up", new_user_registration_path %></li>
-          <li><%= link_to "Log In", new_user_session_path %></li>
+          <li>
+            <%= link_to new_user_registration_path do %>
+              <span class="glyphicon glyphicon-user"></span> Sign Up
+            <% end %>
+          </li>
+          <li>
+            <%= link_to new_user_session_path do %>
+              <span class="glyphicon glyphicon-log-in"></span> Log In
+            <% end %>
+          </li>
         <% end %>
       </ul>
     </div><!-- /.navbar-collapse -->

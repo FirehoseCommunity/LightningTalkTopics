@@ -1,6 +1,7 @@
 class Talk < ActiveRecord::Base
   has_many :votes, dependent: :destroy
   belongs_to :user
+  belongs_to :assignee, class_name: 'User'
 
   scope :unscheduled, -> { where(speak_date: nil).order(:topic) }
   scope :scheduled, -> { where('speak_date >= ?', Date.today).order(:speak_date).order(:topic) }

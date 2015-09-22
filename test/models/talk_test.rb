@@ -8,9 +8,9 @@ class TalkTest < ActiveSupport::TestCase
 
   test "assign a topic to a person" do
     talk = FactoryGirl.create(:topic)
-    talk.update_attributes(is_assigned: true, assigned_to: "Tyler" )
-    assert_equal true, talk.is_assigned
-    assert_equal "Tyler", talk.assigned_to
+    user = FactoryGirl.create(:user)
+    user.assign(talk)
+    assert_equal user, talk.assignee
   end
 
   test "query for scheduled and unscheduled talks" do

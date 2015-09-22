@@ -50,14 +50,14 @@ class TalksController < ApplicationController
 
   def assign
     talk = Talk.find(params[:id])
-    user = "#{current_user.first_name} #{current_user.last_name.first}"
-    talk.update_attributes(is_assigned: true, assigned_to: user)
+    current_user.assign(talk)
     redirect_to(talks_path)
   end
 
   def unassign
     talk = Talk.find(params[:id])
-    talk.update_attributes(is_assigned: false, assigned_to: nil)
+    current_user.unassign(talk)
+    redirect_to(talks_path)
   end
 
   private

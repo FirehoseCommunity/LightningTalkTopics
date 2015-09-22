@@ -9,7 +9,7 @@
       <%= link_to "Assigned", unassign_talk_path(talk), method: :put %>
       <i class="glyphicon glyphicon-star"></i>
     </p>
-    <p>Talk is assigned to: <%= talk.assignee.first_name %></p>
+    <p>Talk is assigned to: <%= talk.assignee.first_name %> <%= talk.assignee.last_name.first %></p>
   <% else %>
     <p>
       <%= link_to "Unassigned", assign_talk_path(talk), method: :put %>

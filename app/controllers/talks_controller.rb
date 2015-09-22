@@ -1,5 +1,7 @@
 class TalksController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create, :edit, :assigned, :upvote]
+  before_action :authenticate_user!, only: [
+    :new, :create, :edit, :assign, :unassign, :upvote
+  ]
 
   def index
     @unscheduled_talks = Talk.unscheduled
@@ -46,15 +48,16 @@ class TalksController < ApplicationController
     redirect_to(talks_path)
   end
 
-  def assigned
-    @talk = Talk.find(params[:id])
+  def assign
+    talk = Talk.find(params[:id])
     user = "#{current_user.first_name} #{current_user.last_name.first}"
-    if @talk.is_assigned == false
-      @talk.update_attributes(is_assigned: true, assigned_to: user)
-    else
-      @talk.update_attributes(is_assigned: false, assigned_to: nil)
-    end
+    talk.update_attributes(is_assigned: true, assigned_to: user)
     redirect_to(talks_path)
+  end
+
+  def unassign
+    talk = Talk.find(params[:id])
+    talk.update_attributes(is_assigned: false, assigned_to: nil)
   end
 
   private
@@ -62,5 +65,4 @@ class TalksController < ApplicationController
   def talk_params
     params.require(:talk).permit(:topic, :description, :speak_date)
   end
-
 end

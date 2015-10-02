@@ -48,4 +48,31 @@ class TalksControllerTest < ActionController::TestCase
 
     assert_redirected_to talks_path
   end
+
+  test "must be signed in to assign talk" do
+    talk = FactoryGirl.create(:topic)
+    put :assign, id: talk.id
+    assert_redirected_to new_user_session_path
+    assert talk.assignee.nil?
+  end
+
+  test "must be correct user to unassign talk" do
+    talk = FactoryGirl.create(:topic)
+    user = FactoryGirl.create(:user)
+    user.assign(talk)
+    other_user = FactoryGirl.create(:user, email: 'other_user@example.com')
+    sign_in other_user
+    put :unassign, id: talk.id
+    talk.reload
+    assert_equal user, talk.assignee
+  end
+
+  test "can assign talk to self" do
+    talk = FactoryGirl.create(:topic)
+    user = FactoryGirl.create(:user)
+    sign_in user
+    put :assign, id: talk.id
+    talk.reload
+    assert_equal user, talk.assignee
+  end
 end

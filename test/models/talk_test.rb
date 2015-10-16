@@ -24,5 +24,21 @@ class TalkTest < ActiveSupport::TestCase
     assert_not scheduled_talks.include? unscheduled_talk
     assert scheduled_talks.include? scheduled_talk
   end
+
+  test "voting updates counter" do
+    talk = FactoryGirl.create(:topic)
+    user = FactoryGirl.create(:user)
+    user.upvote(talk)
+    assert_equal talk.votes_count, 1
+  end
+
+  test "sort talks by votes" do
+    other_talk = FactoryGirl.create(:topic)
+    talk = FactoryGirl.create(:topic)
+    user = FactoryGirl.create(:user)
+    assert_equal Talk.sorted_by_votes.first, other_talk
+    user.upvote(talk)
+    assert_equal Talk.sorted_by_votes.first, talk
+  end
 end
 

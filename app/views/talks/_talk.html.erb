@@ -20,7 +20,7 @@
     <div class="col-xs-12 col-sm-6 col-md-6 text-center">
       <%= button_to upvote_talk_path(talk), class: "btn btn-md btn-info custom-button", method: :post do %>
         <span class="glyphicon glyphicon-thumbs-up"></span>&nbsp;
-        <span class="badge"><%= talk.votes.count %></span>
+        <span class="badge"><%= talk.votes_count %></span>
       <% end %>
     </div>
 

@@ -1,9 +1,12 @@
 <div class="ice col-xs-12 col-md-4">
-  <h2><%= link_to talk.topic, talk_path(talk) %></h2>
+  <h3><%= link_to talk.topic, talk_path(talk) %></h3>
+  <br />
   <h4><%= truncate talk.description, length: 80 %></h4>
+  
   <% if talk.description.length > 80 %>
     <p><%= link_to "Read More...", talk_path(talk) %></p>
   <% end %>
+  
   <% if talk.assignee %>
     <p>
       <%= link_to "Assigned", unassign_talk_path(talk), method: :put %>
@@ -16,10 +19,24 @@
       <i class="glyphicon glyphicon-star-empty"></i>
     </p><br />
   <% end %>
+  
   <% if talk.speak_date.present? %>
     <p>Lightning talk date: <%= talk.speak_date %></p>
   <% end %>
-  <br />
-  <h4 class="pull-left"><%= pluralize(talk.votes.count, "vote") %>&nbsp</h4>
-  <p class="pull-right"><%= button_to '+1', upvote_talk_path(talk), class: "btn btn-sm btn-info", method: :post %></p>
+
+  <div class="row">
+    <hr class="custom-hr" />
+    <div class="col-xs-6 col-md-6 text-center">
+      <%= button_to upvote_talk_path(talk), class: "btn btn-md btn-info votes", method: :post do %>
+        <span class="glyphicon glyphicon-thumbs-up"></span>&nbsp;
+        <span class="badge"><%= talk.votes.count %></span>
+      <% end %>
+    </div>
+
+    <div class="col-xs-6 col-md-6 text-center">
+      <button class="btn btn-md btn-success assigned" type="button">
+        Assigned <span class="glyphicon glyphicon-ok"></span>
+      </button>
+    </div>
+  </div>
 </div>

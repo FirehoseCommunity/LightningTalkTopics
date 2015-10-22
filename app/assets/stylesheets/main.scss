@@ -1,5 +1,19 @@
 // Customizations and Overrides //
 
+// Our variables //
+$base-font-size:   16px;
+$small-font-size:  $base-font-size * 0.875;
+$base-line-height: 1.5;
+
+$spacing-unit:     30px;
+
+$text-color:       #111;
+$background-color: #fdfdfd;
+$brand-color:      #2a7ae2;
+
+$grey-color:       #828282;
+$grey-color-light: lighten($grey-color, 40%);
+$grey-color-dark:  darken($grey-color, 25%);
 
 // Custom Fonts //
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic);
@@ -25,23 +39,82 @@ body {
 
 
 // Bootstrap Overrides //
+div.container-fluid.header-cancel {
+  padding-right: 0px;
+  padding-left: 0px;
+}
+
+
+.navbar {
+  height: 80px;
+}
+
 .navbar-default {
-  padding-top: 10px;
-  padding-bottom: 10px;
+  box-shadow: 0px 0px 2px #F2F1EF;
 }
 
 .navbar-default .navbar-brand {
-  padding: 20px 15px;
+  height: 80px;
+  padding: 30px 0px;
+  font-size: 20px;
+  color: #000;
 }
 
-.navbar-right {
-  padding-top: 10px;
+.navbar-default .navbar-brand:hover {
+  color: #2a7ae2;
+   -webkit-transition: color 800ms linear;
+   -moz-transition: color 800ms linear;
+   -o-transition: color 800ms linear;
+   -ms-transition: color 800ms linear;
+   transition: color 800ms linear;
+ }
+
+ .navbar-default .navbar-nav>li>a {
+   color: #000;
+ }
+
+ .navbar-default .navbar-nav>li>a:hover {
+   color: #2a7ae2;
+   background-color: #f1f1f1;
+   -webkit-transition: background-color 700ms linear;
+   -moz-transition: background-color 700ms linear;
+   -o-transition: background-color 700ms linear;
+   -ms-transition: background-color 700ms linear;
+   transition: background-color 700ms linear;
+ }
+
+.navbar-collapse {
+  background-color: $background-color;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-bottom-color: #000;
+}
+
+.navbar-nav {
+    margin: 7.5px 0px;
+}
+
+ .navbar-right {
+  margin-top: 15px;
+  margin-right: 15px;
+}
+
+.navbar-toggle {
+  margin-top: 25px;
+  margin-right: 30px;
 }
 
 .brand-img {
+  max-height: 50px;
+  margin-top: 15px;
+  margin-right: 30px;
+  margin-left: 20px;
   float: left;
-  max-height: 60px;
   padding-right: 10px;
+  @media only screen 
+  and (max-device-width : 600px)  {
+    margin-right: 10px;
+  }
 }
 
 .glyphicon-star {

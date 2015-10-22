@@ -1,7 +1,7 @@
-// Customizations and Overrides //
+/* Customizations and Overrides */
 
 
-// Custom Fonts //
+/* Custom Fonts */
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic);
 
 body {
@@ -17,14 +17,14 @@ h1, h2 {
   font-weight: 600;
 }
 
-// HTML Elements //
+/* HTML Elements */
 
 body {
   padding-top: 80px;
 }
 
 
-// Bootstrap Overrides //
+/* Bootstrap Overrides */
 .navbar-default {
   padding-top: 10px;
   padding-bottom: 10px;
@@ -48,41 +48,54 @@ body {
   color: #F7CA18;
 }
 
-// Custom CSS //
+
+/* Custom CSS */
 .ice {
-  display: -webkit-flex;
-  display: flex;
-  -webkit-flex-direction: column;
-  flex-direction: column;
-  -webkit-justify-content: space-between;
-  justify-content: space-between;
   height: 350px;
-  margin: 5px 0px;
-  padding-bottom: 15px;
-  background-color: #fff;
-  border-top: 1px solid #e7e7e7;
-  border-left: 1px solid #e7e7e7;
-  border-radius: 5px;
-  box-shadow: 2px 2px 5px #ccc;
+  margin-top: 5px;
+  padding: 10px;
+  box-shadow: 2px 1px 5px #ccc;
 }
 
 .ice a:hover {
+  text-decoration: none;
+  border-bottom: 3px solid #b4e7f8;
+  box-shadow: inset 0 -5px 0 #b4e7f8;
+}
+
+/* start of styles for cards on index.html.erb page */
+.ice-index {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: scroll;
+  height: 350px;
+  margin: 10px 0px;
+  padding: 10px 13px;
+  border: 1px solid #e7e7e7;
+  border-radius: 5px;
+  box-shadow: 1px 1px 5px #ccc;
+}
+
+.ice-index a:hover {
   text-decoration: none;
   border-bottom: 1px solid #b4e7f8;
   box-shadow: inset 0 -5px 0 #b4e7f8;
 }
 
-.votes {
-  width: 90%;
+.assignee {
+  color: #5cb85c;
+  font-weight: bold;
 }
 
-.assigned {
+.custom-button {
   width: 90%;
 }
 
 .custom-hr {
-  width: 90%;
+  width: 93%;
 }
+/* end of styles for cards on index.html.erb page */
 
 .clear {
   clear: both;

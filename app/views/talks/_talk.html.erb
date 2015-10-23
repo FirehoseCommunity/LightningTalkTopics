@@ -1,4 +1,4 @@
-<div class="ice-index col-xs-12 col-md-4">
+<div class="ice-index col-xs-12 col-sm-6 col-md-4">
   <h3><%= link_to talk.topic, talk_path(talk) %></h3>
 
   <h4><%= truncate talk.description, length: 80 %></h4>
@@ -19,14 +19,17 @@
 
   <div class="row">
     <hr class="custom-hr" />
-    <div class="col-xs-6 col-md-6 text-center">
+    <div class="col-xs-12 col-sm-6 col-md-6 text-center">
       <%= button_to upvote_talk_path(talk), class: "btn btn-md btn-info custom-button", method: :post do %>
         <span class="glyphicon glyphicon-thumbs-up"></span>&nbsp;
         <span class="badge"><%= talk.votes.count %></span>
       <% end %>
     </div>
 
-    <div class="col-xs-6 col-md-6 text-center">    
+    <br class="visible-xs hidden-sm hidden-md" />
+    <br class="visible-xs hidden-sm hidden-md" />
+
+    <div class="col-xs-12 col-sm-6 col-md-6 text-center">    
       <% if talk.assignee %>
         <%= link_to unassign_talk_path(talk), method: :put do %>
           <button class="btn btn-md btn-success custom-button" type="button">

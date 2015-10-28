@@ -83,7 +83,7 @@ $(document).ready(function() {
   // Readjust cards' size when browser width changes
   $(window).on('resize', function() {
     // if check to cover for scrolling on mobile devices
-    if ($windowWidth !== $(document).width()) {
+    if ($windowWidth !== $(window).width()) {
       cardSizeReadjust(700);
     }
   });

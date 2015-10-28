@@ -1,6 +1,7 @@
 $(document).ready(function() {
 
   var windowResizeID,
+      $windowWidth = $(window).width(),
       $iceIndex = $('.ice-index'),
       $alignBottom = $('.align-bottom');
 
@@ -66,8 +67,24 @@ $(document).ready(function() {
     });
   }
 
-  // Readjust cards' size on index.html.erb when browser is resized
-  $(window).on('resize', function() { 
+  // Readjust cards' size when browser width changes
+  $(window).on('resize', function() {
+    // if check to cover for mobile devices
+    if ($windowWidth !== $(document).width()) {
+      heightToAuto();
+      removeAlignBottomStyles();
+
+      clearTimeout(windowResizeID);
+      windowResizeID = setTimeout(function() {
+        heightToLargestAnimated();
+        setAlignBottomStyles();
+      }, 700);
+    }
+  });
+
+  // Readjust cards' size when mobile orientation changes
+  $(window).on('orientationchange', function() {
+    $windowWidth = $(window).width();
     heightToAuto();
     removeAlignBottomStyles();
 
@@ -75,7 +92,7 @@ $(document).ready(function() {
     windowResizeID = setTimeout(function() {
       heightToLargestAnimated();
       setAlignBottomStyles();
-    }, 700);
+    }, 1000);
   });
 
   heightToLargest();

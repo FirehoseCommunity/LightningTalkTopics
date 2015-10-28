@@ -71,6 +71,7 @@ $(document).ready(function() {
   $(window).on('resize', function() {
     // if check to cover for mobile devices
     if ($windowWidth !== $(document).width()) {
+      $windowWidth = $(window).width();
       heightToAuto();
       removeAlignBottomStyles();
 

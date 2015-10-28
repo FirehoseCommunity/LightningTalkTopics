@@ -67,24 +67,8 @@ $(document).ready(function() {
     });
   }
 
-  // Readjust cards' size when browser width changes
-  $(window).on('resize', function() {
-    // if check to cover for mobile devices
-    if ($windowWidth !== $(document).width()) {
-      $windowWidth = $(window).width();
-      heightToAuto();
-      removeAlignBottomStyles();
-
-      clearTimeout(windowResizeID);
-      windowResizeID = setTimeout(function() {
-        heightToLargestAnimated();
-        setAlignBottomStyles();
-      }, 700);
-    }
-  });
-
-  // Readjust cards' size when mobile orientation changes
-  $(window).on('orientationchange', function() {
+  // Readjust card size with a delay
+  function cardSizeReadjust(delay) {
     $windowWidth = $(window).width();
     heightToAuto();
     removeAlignBottomStyles();
@@ -93,7 +77,20 @@ $(document).ready(function() {
     windowResizeID = setTimeout(function() {
       heightToLargestAnimated();
       setAlignBottomStyles();
-    }, 1000);
+    }, delay);
+  }
+
+  // Readjust cards' size when browser width changes
+  $(window).on('resize', function() {
+    // if check to cover for scrolling on mobile devices
+    if ($windowWidth !== $(document).width()) {
+      cardSizeReadjust(700);
+    }
+  });
+
+  // Readjust cards' size when mobile orientation changes
+  $(window).on('orientationchange', function() {
+    cardSizeReadjust(1000);
   });
 
   heightToLargest();

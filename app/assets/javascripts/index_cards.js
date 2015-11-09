@@ -1,6 +1,7 @@
 $(document).ready(function() {
 
   var windowResizeID,
+      $windowWidth = $(window).width(),
       $iceIndex = $('.ice-index'),
       $alignBottom = $('.align-bottom');
 
@@ -66,8 +67,9 @@ $(document).ready(function() {
     });
   }
 
-  // Readjust cards' size on index.html.erb when browser is resized
-  $(window).on('resize', function() { 
+  // Readjust card size with a delay
+  function cardSizeReadjust(delay) {
+    $windowWidth = $(window).width();
     heightToAuto();
     removeAlignBottomStyles();
 
@@ -75,7 +77,20 @@ $(document).ready(function() {
     windowResizeID = setTimeout(function() {
       heightToLargestAnimated();
       setAlignBottomStyles();
-    }, 700);
+    }, delay);
+  }
+
+  // Readjust cards' size when browser width changes
+  $(window).on('resize', function() {
+    // if check to cover for scrolling on mobile devices
+    if ($windowWidth !== $(window).width()) {
+      cardSizeReadjust(700);
+    }
+  });
+
+  // Readjust cards' size when mobile orientation changes
+  $(window).on('orientationchange', function() {
+    cardSizeReadjust(1000);
   });
 
   heightToLargest();

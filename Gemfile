@@ -15,6 +15,8 @@ gem 'bootstrap-sass'
 gem 'devise'
 # Simple form
 gem 'simple_form'
+# WYSIWYG text editor
+gem 'ckeditor'
 
 gem 'sdoc', '~> 0.4.0', group: :doc
 

@@ -1,0 +1,23 @@
+<div class="col-xs-12 col-md-10 col-md-offset-1">
+  <h1 class="text-center">
+    All Talks on <%= @talk.speak_date %>
+  </h1>
+  <button class = "btn btn-success" id = "CopyToClipboard" data-clipboard-action="copy" data-clipboard-target="#talks">
+    <span class = "glyphicon glyphicon-paperclip"></span> Copy to clipboard
+  </button>
+  <br>
+  <div id = "talks">
+	  <% @talks.each do |talk| %>
+	  	<p><strong><%= talk.topic %></strong> (<%= User.find(talk.assignee_id).first_name + ' ' + User.find(talk.assignee_id).last_name %>)</p>
+	  	<p><%= raw(talk.description) %></p>
+	  	<br>
+	  <% end %>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/clipboard.js/1.5.3/clipboard.min.js"></script>
+
+
+<script>
+new Clipboard('#CopyToClipboard');
+</script>

@@ -2,7 +2,8 @@
   <h1>Edit the details of the topic</h1>
   <%= simple_form_for @talk do |f| %>
     <%= f.input :topic %><br />
-    <%= f.input :description %><br />
+    <%= f.label :description %>
+    <%= f.cktext_area :description %><br />
     <%= f.submit 'Update', class: 'btn btn-primary' %>
   <% end %>
 </div>

@@ -3,7 +3,7 @@
 <div class="ice col-xs-10 col-xs-offset-1">
   <h1><%= @talk.topic %></h1>
   <br />
-  <h3><%= @talk.description %></h3>
+  <h3><%= raw(@talk.description) %></h3>
   <br />
   <p>Assigned to: <%= @talk.assigned_to %></p>
   <% if current_user && current_user == @talk.user || current_user && current_user.admin == true %>

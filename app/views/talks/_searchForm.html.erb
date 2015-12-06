@@ -1,0 +1,12 @@
+<div class="col-xs-10 col-xs-offset-1">
+	<%= form_tag search_path, :class => 'form-group pull-right', :method => 'get' do %>
+	  <p>
+	  	<div class = "col-xs-8">
+	    	<%= text_field_tag :search, params[:search], :class => 'form-control' %>
+	    </div>
+	    <%= button_tag(type: "submit", name: nil, class: "btn btn-info") do %>
+				<span class = "glyphicon glyphicon-search"></span> Search
+			<% end %>
+	  </p>
+	<% end %>
+</div>

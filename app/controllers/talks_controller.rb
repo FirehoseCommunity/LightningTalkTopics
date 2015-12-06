@@ -60,6 +60,10 @@ class TalksController < ApplicationController
     redirect_to(talks_path)
   end
 
+  def search
+    @talks = Talk.search(params[:search])
+  end
+
   private
 
   def talk_params

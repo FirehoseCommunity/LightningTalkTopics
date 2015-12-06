@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   devise_for :users, :controllers => { registrations: 'registrations' }
   root 'talks#index'
   get '/about', to: 'talks#about'
+  get '/search', to: 'talks#search'
 
   resources :talks do
     member do

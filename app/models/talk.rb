@@ -11,4 +11,12 @@ class Talk < ActiveRecord::Base
   # Add Validation
   validates :topic, presence: true, length: { minimum: 3 }
   validates :description, presence: true
+
+  def self.search(search)
+    if search
+      where('lower(topic) LIKE ? OR lower(description) LIKE ?', "%#{search.downcase}%", "%#{search.downcase}%")
+    else
+      find(:all)
+    end
+  end
 end

@@ -3,7 +3,7 @@
 <div class="ice col-xs-10 col-xs-offset-1">
   <h1><%= @talk.topic %></h1>
   <br />
-  <h3><%= @talk.description %></h3>
+  <h3><%= raw(@talk.description) %></h3>
   <br />
   <% if @talk.assignee.present? %>
     <p>Assigned to: <%= @talk.assignee.first_name %> <%= @talk.assignee.last_name.first %>.</p>

@@ -48,6 +48,13 @@ GEM
       sass (>= 3.3.0)
     builder (3.2.2)
     byebug (6.0.2)
+    ckeditor (4.1.4)
+      cocaine
+      orm_adapter (~> 0.5.0)
+    climate_control (0.0.3)
+      activesupport (>= 3.0)
+    cocaine (0.5.8)
+      climate_control (>= 0.0.3, < 1.0)
     coffee-rails (4.1.0)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0, < 5.0)
@@ -168,6 +175,7 @@ PLATFORMS
 DEPENDENCIES
   bootstrap-sass
   byebug
+  ckeditor
   coffee-rails (~> 4.1.0)
   devise
   factory_girl_rails (~> 4.0)

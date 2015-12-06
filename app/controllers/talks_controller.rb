@@ -61,8 +61,7 @@ class TalksController < ApplicationController
   end
 
   def roster
-    @talk = Talk.find(params[:id])
-    @talks = Talk.where("speak_date = ?", @talk.speak_date)
+    @talks = Talk.where("speak_date = ?", params[:date])
   end
 
   private

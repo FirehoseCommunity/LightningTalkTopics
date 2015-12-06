@@ -1,6 +1,6 @@
 <div class="col-xs-12 col-md-10 col-md-offset-1">
   <h1 class="text-center">
-    All Talks on <%= @talk.speak_date %>
+    All Talks on <%= params[:date] %>
   </h1>
   <button class = "btn btn-success" id = "CopyToClipboard" data-clipboard-action="copy" data-clipboard-target="#talks">
     <span class = "glyphicon glyphicon-paperclip"></span> Copy to clipboard

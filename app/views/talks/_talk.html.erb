@@ -12,7 +12,7 @@
   <% end %>
   
   <% if talk.speak_date.present? %>
-    <p>Lightning talk date: <%= talk.speak_date %></p>
+    <p>Lightning talk date: <%= link_to talk.speak_date, roster_path(:date => talk.speak_date) %></p>
   <% end %>
 
   <div class="row align-bottom">

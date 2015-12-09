@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   root 'talks#index'
   get '/about', to: 'talks#about'
   get '/search', to: 'talks#search'
+  get '/roster/:date', to: 'talks#roster', as: 'roster'
 
   resources :talks do
     member do

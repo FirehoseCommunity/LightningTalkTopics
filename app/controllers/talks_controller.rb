@@ -64,6 +64,10 @@ class TalksController < ApplicationController
     @talks = Talk.search(params[:search])
   end
 
+  def roster
+    @talks = Talk.where("speak_date = ?", params[:date])
+  end
+
   private
 
   def talk_params

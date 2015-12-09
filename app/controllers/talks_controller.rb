@@ -60,6 +60,10 @@ class TalksController < ApplicationController
     redirect_to(talks_path)
   end
 
+  def roster
+    @talks = Talk.where("speak_date = ?", params[:date])
+  end
+
   private
 
   def talk_params

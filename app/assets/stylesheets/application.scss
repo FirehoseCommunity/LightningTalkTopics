@@ -14,5 +14,7 @@
  *= require_tree .
  */
 
-@import "bootstrap-sprockets";
-@import "bootstrap";
+ @import '1-base/fonts';
+ @import '1-base/variables';
+ @import '1-base/typography';
+ @import '1-base/global';

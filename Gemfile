@@ -9,8 +9,6 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
-# Bootstrap Styling Framework
-gem 'bootstrap-sass'
 # User authentication
 gem 'devise'
 # Simple form

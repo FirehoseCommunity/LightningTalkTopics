@@ -12,6 +12,8 @@ gem 'jbuilder', '~> 2.0'
 gem 'devise'
 # Simple form
 gem 'simple_form'
+# Font Awesome Icons
+gem 'font-awesome-sass', '~> 4.6.2'
 
 gem 'sdoc', '~> 0.4.0', group: :doc
 

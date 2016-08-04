@@ -1,0 +1,32 @@
+// Search Styling
+
+.search-wrapper
+  margin: 0 auto
+
+.form-wrapper
+  display: flex
+  flex-direction: row
+  align-items: center
+
+.search-field
+  width: 180px
+  height: 40px
+  border: 1px solid $light-gray
+  border-radius: 3px
+
+.search-button
+  width: auto
+
+@media screen and (min-width: $mobile-breakpoint)
+  .search-field,
+  .search-button
+    margin: 0
+
+  .search-field
+    width: 300px
+
+  .search-button
+    margin-left: 20px
+
+  .form-wrapper
+    justify-content: flex-end

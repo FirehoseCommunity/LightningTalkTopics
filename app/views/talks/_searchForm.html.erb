@@ -1,12 +1,8 @@
-<div class="col-xs-10 col-xs-offset-1">
-	<%= form_tag search_path, :class => 'form-group pull-right', :method => 'get' do %>
-	  <p>
-	  	<div class = "col-xs-8">
-	    	<%= text_field_tag :search, params[:search], :class => 'form-control' %>
-	    </div>
-	    <%= button_tag(type: "submit", name: nil, class: "btn btn-info") do %>
-				<span class = "glyphicon glyphicon-search"></span> Search
+<div class="container search-wrapper">
+	<%= form_tag search_path, :class => 'form-wrapper', :method => 'get' do %>
+    	<%= text_field_tag :search, params[:search], class: 'search-field', placeholder: 'Search ...' %>
+	    <%= button_tag(type: "submit", name: nil, class: "button button-blue search-button") do %>
+				<i class="fa fa-search" aria-hidden="true"></i>
 			<% end %>
-	  </p>
 	<% end %>
 </div>

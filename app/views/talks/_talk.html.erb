@@ -15,10 +15,10 @@
         <p>Lightning talk date: <%= link_to talk.speak_date, roster_path(:date => talk.speak_date) %></p>
       <% end %>
     </div>
-    
+
     <div class="card-button-wrapper">
       <%= button_to upvote_talk_path(talk), class: "button button-blue", method: :post do %>
-        <span>&uarr; <%= talk.votes_count %></span>
+        <span><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>  <%= talk.votes_count %></span>
       <% end %>
       <% if talk.assignee %>
         <%= link_to unassign_talk_path(talk), method: :put do %>

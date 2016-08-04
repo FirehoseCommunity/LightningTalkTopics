@@ -13,9 +13,15 @@
  *= require_self
  */
 
+/* Font Awesome Imports */
+ @import "font-awesome-sprockets";
+ @import "font-awesome";
+
+ /* Site Sass Imports */
  @import '1-base/fonts';
  @import '1-base/variables';
  @import '1-base/typography';
  @import '1-base/global';
  @import '2-components/navigation';
+ @import '2-components/search';
  @import '2-components/cards';

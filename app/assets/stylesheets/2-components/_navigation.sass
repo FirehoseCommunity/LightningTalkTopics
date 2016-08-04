@@ -57,7 +57,7 @@
   left: 0
   width: 100%
   margin-top: 0
-  padding-top: 20px
+  padding: 20px 0 0 0
   background-color: $white
   display: none
   text-align: center
@@ -98,7 +98,6 @@ li:hover > .navigation-dropdown-menu
 @media screen and (min-width: $tablet-breakpoint)
   .navigation-links-wrapper
     height: 60px
-    margin: 10px 0
     position: inherit
     display: flex
     flex-flow: row wrap
@@ -111,6 +110,8 @@ li:hover > .navigation-dropdown-menu
     border-top: 1px solid transparent
     background-color: $white
     border-radius: 3px
+    li
+      margin-left: 0
 
   li:hover > .navigation-dropdown-menu
     display: block

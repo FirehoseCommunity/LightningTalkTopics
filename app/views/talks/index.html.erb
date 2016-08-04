@@ -1,7 +1,9 @@
-<section id="talks">
+<section id="search-section">
     <!-- Start Search Form -->
     <%= render "searchForm" %>
     <!-- End of Search Form -->
+</section> <!-- End Search Section -->
+<section id="talks-section">
     <!-- Start Scheduled Talk Section -->
     <%= render "partials/scheduledTalks" if @scheduled_talks.count >= 1 %>
     <!-- End of Scheduled Talk Section -->
@@ -11,4 +13,4 @@
     <!-- Begin Previously Given Talks -->
     <%= render "partials/previousTalks" if @previous_talks.count >= 1 %>
     <!-- End Previously Given Talks -->
-</section>
+</section> <!-- End Talks Section -->

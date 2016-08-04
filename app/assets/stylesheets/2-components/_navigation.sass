@@ -1,0 +1,118 @@
+// Navigation Styling
+
+#navigation
+  width: 100%
+  height: 80px
+  position: fixed
+  top: 0
+  background-color: $white
+  box-shadow: $box-shadow-nav
+
+.navigation-container
+  display: flex
+  flex-flow: row wrap
+  justify-content: space-between
+
+// Branding Styling
+
+.brand-wrapper
+  display: flex
+  flex-direction: row
+  align-items: center
+  height: 60px
+  margin: 10px 0
+
+.brand-logo
+  height: 100%
+  width: auto
+
+.brand-title,
+.brand-title-alt
+  font-size: 1.5rem
+  text-decoration: none
+  color: $primary-text-color
+  margin-left: 20px
+
+.brand-title
+  display: none
+
+@media screen and (min-width: $mobile-breakpoint)
+  .brand-title
+    display: block
+    font-size: 2rem
+
+  .brand-title-alt
+    display: none
+
+// Links Styling
+.mobile-navigation-toggle
+  height: 30px
+  width: auto
+  margin: 25px auto
+
+.navigation-links-wrapper
+  height: 100vh
+  position: fixed
+  top: 80px
+  left: 0
+  width: 100%
+  background-color: $white
+  display: none
+  text-align: center
+  flex-flow: column wrap
+  align-items: center
+  list-style: none
+  font-size: 1.5rem
+  li
+    margin-bottom: 20px
+    cursor: pointer
+    &:hover
+      transition: $transition
+      color: $primary-blue
+  a
+    color: $primary-text-color
+    text-decoration: none
+    &:hover
+      transition: $transition
+      color: $primary-blue
+
+.navigation-dropdown-menu
+  display: none
+  list-style: none
+  padding: 0
+  margin: 0
+  li
+    padding: 10px
+  a
+    transition: $transition
+
+li:hover > .navigation-dropdown-menu
+  display: flex
+  flex-direction: column
+  padding-top: 20px
+  a:hover
+    color: $primary-blue
+
+@media screen and (min-width: $tablet-breakpoint)
+  .navigation-links-wrapper
+    height: 60px
+    margin: 10px 0
+    position: inherit
+    display: flex
+    flex-flow: row wrap
+    li
+      margin-left: 20px
+      margin-bottom: 0
+
+  .navigation-dropdown-menu
+    border: 1px solid $light-gray
+    border-top: 1px solid transparent
+    background-color: $white
+    border-radius: 3px
+
+  li:hover > .navigation-dropdown-menu
+    display: block
+    position: absolute
+
+  .mobile-navigation-toggle
+    display: none

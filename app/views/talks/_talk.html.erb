@@ -23,7 +23,7 @@
       <% if talk.assignee %>
         <%= link_to unassign_talk_path(talk), method: :put do %>
           <button class="button button-green" type="button">
-            Assigned
+            <span><i class="fa fa-check" aria-hidden="true"></i>  Assigned</span>
           </button>
         <% end %>
       <% else %>

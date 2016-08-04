@@ -1,8 +1,12 @@
-<div class="col-xs-10 col-xs-offset-1">
-  <h1>Enter the details of the topic</h1>
-  <%= simple_form_for @talk do |f| %>
-    <%= f.input :topic, required: false, error: 'Topic is required' %><br />
-    <%= f.input :description, required: false, error: "A description is required" %><br />
-    <%= f.submit 'Submit', class: 'btn btn-primary' %>
-  <% end %>
-</div>
+<section id="show-card" class="container">
+  <div class="card-wrapper">
+    <h1>Enter the details of the topic</h1>
+    <div class="form-wrapper">
+      <%= simple_form_for @talk do |f| %>
+        <h3 class="left"><%= f.input :topic, required: false, error: 'Topic is required' %></h3>
+        <h3 class="left"><%= f.input :description, required: false, error: "A description is required" %></h3>
+        <%= f.submit 'Submit', class: 'button button-blue' %>
+      <% end %>
+    </div>
+  </div>
+</section>

@@ -1,4 +1,16 @@
 // Cards Styling
+
+// Card Show Page
+#show-card
+  margin: 50px auto
+
+.card-schedule-wrapper
+  margin: 30px auto
+  select
+    width: 90%
+    margin: 10px 0
+
+// General Card Styling
 .talk-wrapper
   display: flex
   flex-wrap: wrap
@@ -30,8 +42,20 @@
   display: flex
   flex-direction: column
   justify-content: space-between
+  a
+    text-decoration: none
 
 @media screen and (min-width: $tablet-breakpoint)
+  // Show Page Card Styling
+  #show-card
+    .card-button-wrapper
+      width: 50%
+      margin: 0 auto
+
+  .card-schedule-wrapper
+    width: 50%
+
+  // Card Styling
   .talk-wrapper
     display: flex
     flex-wrap: wrap

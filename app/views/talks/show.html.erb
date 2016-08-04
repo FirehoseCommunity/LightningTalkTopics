@@ -1,37 +1,41 @@
-<br />
-<br />
-<div class="ice col-xs-10 col-xs-offset-1">
-  <h1><%= @talk.topic %></h1>
-  <br />
-  <h3><%= @talk.description %></h3>
-  <br />
-  <% if @talk.assignee.present? %>
-    <p>Assigned to: <%= @talk.assignee.first_name %> <%= @talk.assignee.last_name.first %>.</p>
-  <% else %>
-    <p> Assigned to: <i>Talk is currently unassigned </i></p>
-  <% end %>
-  <% if current_user && current_user == @talk.user || current_user && current_user.admin == true %>
-    <%= link_to "Edit", edit_talk_path, class: "btn btn-primary" %>
-    <%= link_to "Destroy", talk_path(@talk), method: :delete, data:{confirm: "Are you sure you want to delete this?"}, class: "btn btn-danger" %>
-  <% end %>
-  <% if current_user && current_user.admin? %>
-    <div class="pull-right">
-      <% if @talk.speak_date.nil? %>
-        <h3>Schedule this talk: </h3>
-        <%= form_for(@talk) do |f| %>
-          <%= f.date_select(:speak_date, order: [:month, :day, :year]) %>
-          <%= f.submit "Schedule" %>
-        <% end %>
-      <% else %>
-        <h4>This talk is scheduled for: <br/>
-        <%= @talk.speak_date %></h4>
-        <%= form_for(@talk) do |f| %>
-          <%= f.hidden_field(:speak_date, value: nil) %>
-          <%= f.submit "Reset" %>
-        <% end %>
+<section id="show-card" class="container">
+
+
+  <div class="card-wrapper">
+    <h1 class="card-title"><%= @talk.topic %></h1>
+    <h3 card="description"><%= @talk.description %></h3>
+
+    <% if @talk.assignee.present? %>
+      <p>Assigned to: <%= @talk.assignee.first_name %> <%= @talk.assignee.last_name.first %>.</p>
+    <% else %>
+      <p> Assigned to: <i>Talk is currently unassigned </i></p>
+    <% end %>
+
+    <div class="card-button-wrapper">
+      <% if current_user && current_user == @talk.user || current_user && current_user.admin == true %>
+        <%= link_to "Edit", edit_talk_path, class: "button button-blue" %>
+        <%= link_to "Destroy", talk_path(@talk), method: :delete, data:{confirm: "Are you sure you want to delete this?"}, class: "button button-red" %>
       <% end %>
     </div>
-  <% end %>
-</div>
-<br />
-<br />
+
+    <% if current_user && current_user.admin? %>
+      <div class="card-schedule-wrapper">
+        <% if @talk.speak_date.nil? %>
+          <h3>Schedule this talk: </h3>
+          <%= form_for(@talk) do |f| %>
+            <%= f.date_select(:speak_date, order: [:month, :day, :year]) %>
+            <%= f.submit "Schedule", class: 'button' %>
+          <% end %>
+        <% else %>
+          <h4>This talk is scheduled for:
+          <%= @talk.speak_date %></h4>
+          <%= form_for(@talk) do |f| %>
+            <%= f.hidden_field(:speak_date, value: nil) %>
+            <%= f.submit "Reset", class: 'button' %>
+          <% end %>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+
+</section>

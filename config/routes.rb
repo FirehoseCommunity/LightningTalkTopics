@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   get '/search', to: 'talks#search'
   get '/roster/:date', to: 'talks#roster', as: 'roster'
 
+  resources :static_pages, only: [:index]
+
   resources :talks do
     member do
       post 'upvote'

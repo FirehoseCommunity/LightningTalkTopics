@@ -16,6 +16,7 @@
             <li><%= link_to "About", about_path %></li>
           </ul>
         </li>
+        <li><%= link_to "Topics", talks_path %></li>
         <% if user_signed_in? %>
           <li>
             <%= link_to new_talk_path do %>

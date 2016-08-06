@@ -110,8 +110,14 @@ li:hover > .navigation-dropdown-menu
     border-top: 1px solid transparent
     background-color: $white
     border-radius: 3px
+    opacity: 0
+    transform: translateY(-60%)
+    transition: .3s ease-in-out .1s
     li
       margin-left: 0
+    &:hover
+      opacity: 1
+      transform: translateY(0%)
 
   li:hover > .navigation-dropdown-menu
     display: block

@@ -10,6 +10,8 @@
             <div class="content-wrapper">
               <h5><%= u.first_name %> <%= u.last_name %></h5>
               <h6><%= u.email %></h6>
+              <% @user = u %>
+              <%= link_to "Remove Admin?", admin_path(@user.id, admin: true), :method => :put, :data => {:confirm => "Are you sure?"}, class: 'button button-red' %>
             </div>
           <% end %>
         <% end %>
@@ -19,12 +21,13 @@
     <section>
       <h3 class="center">Current Users</h3>
       <div class="user-wrapper">
-        <% User.all.each do |u| %>
+        <% @users.each do |u| %>
           <div class="content-wrapper">
             <h5><%= u.first_name %> <%= u.last_name %><h5>
             <h6><%= u.email %></h6>
             <% if u.admin == false %>
-              <%= link_to "Make Admin?", edit_user_registration_path(u.id, :admin => true), :method => :put, :confirm => "Are you sure?" %>
+              <% @user = u %>
+              <%= link_to "Make Admin?", admin_path(@user.id, admin: true), :method => :put, :data => {:confirm => "Are you sure?"}, class: 'button' %>
             <% end %>
           </div>
         <% end %>

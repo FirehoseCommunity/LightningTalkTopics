@@ -10,7 +10,8 @@ Rails.application.routes.draw do
   get '/about', to: 'talks#about'
   get '/search', to: 'talks#search'
   get '/roster/:date', to: 'talks#roster', as: 'roster'
-  get '/admin', to: 'static_pages#admin'
+
+  resources :admin
 
   resources :static_pages, only: [:index]
 

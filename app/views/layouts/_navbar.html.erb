@@ -10,7 +10,7 @@
       <img src="/assets/menu.svg" alt="Mobile Navigation Menu Button" id="mobile-navigation-toggle" class="mobile-navigation-toggle"/>
       <ul class="navigation-links-wrapper">
         <% if user_signed_in? && current_user.admin == true %>
-          <li><%= link_to "Admin", admin_path %></li>
+          <li><%= link_to "Admin", admin_index_path %></li>
         <% end %>
         <li>Firehose Links
           <ul class="navigation-dropdown-menu">

@@ -1,0 +1,29 @@
+// Admin Styling
+
+#admin
+
+.admin-wrapper,
+.user-wrapper
+  display: flex
+  flex-flow: column wrap
+  justify-content: flex-start
+
+.content-wrapper
+  border-radius: 3px
+  background-color: $background-color
+  padding: 20px
+  margin: 0 10px
+
+.admin-card-wrapper
+  display: flex
+  flex-flow: column wrap
+
+
+@media screen and (min-width: $tablet-breakpoint)
+  .admin-wrapper,
+  .user-wrapper
+    flex-flow: row wrap
+
+  .admin-card-wrapper
+    display: flex
+    flex-flow: row wrap

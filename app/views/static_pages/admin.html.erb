@@ -24,7 +24,7 @@
             <h5><%= u.first_name %> <%= u.last_name %><h5>
             <h6><%= u.email %></h6>
             <% if u.admin == false %>
-              <%= button_to 'Make Admin?' %>
+              <%= link_to "Make Admin?", edit_user_registration_path(u.id, :admin => true), :method => :put, :confirm => "Are you sure?" %>
             <% end %>
           </div>
         <% end %>

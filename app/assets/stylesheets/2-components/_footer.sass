@@ -1,0 +1,59 @@
+// Footer Styling
+
+footer
+  width: 100%
+  background-color: $dark-gray
+  margin: 0
+  padding: 30px 0
+  color: $secondary-text-color
+
+.footer-wrapper
+  display: flex
+  flex-direction: column
+
+.footer-brand-wrapper
+  display: flex
+  flex-direction: row
+  justify-content: space-between
+  align-items: center
+  height: 80px
+  margin-bottom: 20px
+
+.footer-brand-logo
+  height: 60px
+  width: auto
+
+.footer-brand-title
+  margin: 0
+  font-size: 1.75rem
+
+.footer-links-wrapper
+  h4
+    margin-bottom: 10px
+  ul
+    list-style: none
+    li
+      margin-bottom: 5px
+      a
+        text-decoration: none
+        color: $secondary-text-color
+        &:hover
+          color: $primary-green
+
+@media screen and (min-width: $mobile-breakpoint)
+  .footer-wrapper
+    flex-direction: row-reverse
+    justify-content: space-around
+
+  .footer-brand-title
+    margin-left: 20px
+    font-size: 2rem
+
+@media screen and (min-width: $tablet-breakpoint)
+  .footer-brand-wrapper
+    justify-content: flex-end
+    width: 50%
+    
+  .footer-links-wrapper
+    display: flex
+    flex-flow: row wrap

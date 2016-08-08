@@ -1,0 +1,80 @@
+// Cards Styling
+
+// Card Show Page
+#show-card
+  margin: 50px auto
+
+.card-schedule-wrapper
+  margin: 30px auto
+  select
+    margin: 10px 0
+
+// Roster Page
+#roster
+  .button
+    width: 60%
+
+@media screen and (min-width: $tablet-breakpoint)
+  #roster
+    .button
+      width: 100%
+
+// General Card Styling
+.talk-wrapper
+  display: flex
+  flex-wrap: wrap
+
+.card-container
+  display: flex
+  flex: 0 0 100%
+  padding: 10px
+
+.card-wrapper
+  width: 100%
+  display: flex
+  flex-flow: column nowrap
+  justify-content: space-between
+  margin-bottom: 30px
+  text-align: center
+  box-shadow: $box-shadow-card
+  padding: 20px
+  background-color: $background-color
+
+.card-title
+  a
+    color: $primary-text-color
+    text-decoration: none
+
+.card-button-wrapper
+  height: 100px
+  margin-top: 18px
+  display: flex
+  flex-direction: column
+  justify-content: space-between
+  a
+    text-decoration: none
+
+@media screen and (min-width: $tablet-breakpoint)
+  // Show Page Card Styling
+  #show-card
+    .card-button-wrapper
+      width: 50%
+      margin: 0 auto
+
+  .card-schedule-wrapper
+    width: 50%
+
+  // Card Styling
+  .talk-wrapper
+    display: flex
+    flex-wrap: wrap
+
+  .card-container
+    display: flex
+    flex-wrap: wrap
+    flex: 0 0 33.3333%
+
+  .card-wrapper
+    width: 100%
+    display: flex
+    flex-flow: column nowrap

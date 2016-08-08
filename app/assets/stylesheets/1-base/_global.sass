@@ -1,0 +1,124 @@
+// Global Styling
+
+// HTML Elements
+
+*,
+html
+  -moz-box-sizing: border-box
+  box-sizing: border-box
+  font-family: $font-family
+
+html,
+body
+  height: 100%
+  width: 100%
+  margin: 0
+  padding: 0
+  font-size: 100%
+
+body
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
+  text-rendering: optimizeLegibility
+  padding-top: 80px
+
+section
+  padding: 20px 0
+
+// Container
+.container
+  width: 100%
+  margin: 0 auto
+  padding: 0 20px
+
+@media screen and (min-width: $tablet-breakpoint)
+  .container
+    width: 80%
+    padding: 0
+
+// Text Alignment
+.left
+  text-align: left
+
+.right
+  text-align: right
+
+.center
+  text-align: center
+  margin-left: auto
+  margin-right: auto
+
+.justify
+  text-align: justify
+
+// Alerts
+.alert
+  height: auto
+  width: 100%
+  padding: 10px 0
+  text-align: center
+  background-color: $light-gray
+  color: $primary-text-color
+
+.alert-positive
+  background-color: $primary-green
+  color: $white
+
+.alert-negative
+  background-color: $primary-red
+  color: $white
+
+// Button Styling
+
+.button
+  height: 40px
+  width: 100%
+  margin: 0 auto
+  padding: 0 30px
+  line-height: 40px
+  font-size: 1.25rem
+  text-transform: uppercase
+  border-radius: 3px
+  border: none
+  color: $secondary-text-color
+  background-color: $light-gray
+  transition: all .3s ease-in-out
+  cursor: pointer
+  &:hover
+    background-color: $dark-gray
+
+a.button
+  text-decoration: none
+
+.button-blue
+  background-color: $primary-blue
+  &:hover
+    background-color: $primary-blue-dark
+
+.button-green
+  background-color: $primary-green
+  &:hover
+    background-color: $primary-green-dark
+
+.button-red
+  background-color: $primary-red
+  &:hover
+    background-color: $primary-red-dark
+
+// Form Input
+input,
+text,
+select,
+textarea
+  width: 100%
+  padding: 10px
+  font-size: 18px
+  line-height: 20px
+  border: 1px solid $light-gray
+  border-radius: 3px
+
+input[type="checkbox"]
+  width: auto
+
+textarea
+  min-height: 200px

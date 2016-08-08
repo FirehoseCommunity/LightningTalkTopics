@@ -1,0 +1,112 @@
+<section id="landing">
+  <section id="hero">
+    <div class="hero-container">
+      <div class="hero-content-wrapper">
+        <h2 class="hero-title">Firehose Lightning Talks</h2>
+        <p class="hero-subtitle">Where students showcase their passions</p>
+      </div>
+    </div>
+  </section> <!-- End Hero Section -->
+
+  <section id="content">
+    <div class="info-box-container">
+      <div class="info-box-alt">
+        <div class="info-box-wrapper info-box-alt">
+          <h2 class="info-box-title">What?</h2>
+          <div class="info-box-description">
+            <p>
+              <em>Lightning Talk</em> - A short, 5-7 minute, talk about a specific topic in the design &amp; development world.
+            </p>
+            <p>
+              Students, alumni, &amp; mentors gather together to support &amp; showcase the things that they have learned &amp; are passionate about.
+            </p>
+          </div>
+        </div> <!-- End What -->
+      </div>
+
+      <div class="info-box-wrapper">
+        <h2 class="info-box-title">Why?</h2>
+        <div class="info-box-description">
+          <p>
+            The intentions of the lightning talks are to support our community in their pusuit for confidence &amp; skill growth.
+          </p>
+          <ul>
+            <li>
+              The best way to learn is to teach; level up by teaching by what you've learned
+            </li>
+            <li>
+              Grow your confidence in talking about technology, development, &amp; design by presenting to a group of like minded individuals who won't judge you &amp; who will applaud your bravery
+            </li>
+            <li>
+              Have a video showcasing your talk to share with friends, peers, &amp; potential employers
+            </li>
+            <li>
+              Shine a light on a new technology, tool, service, gem, plugin, etc that could improve the development &amp; design life of your peers
+            </li>
+            <li>
+              Most importantly because it's <strong>FUN</strong>!
+            </li>
+          </ul>
+        </div>
+      </div> <!-- End Why -->
+
+      <div class="info-box-alt">
+        <div class="info-box-wrapper">
+          <h2 class="info-box-title">How?</h2>
+          <div class="info-box-description">
+            <p>
+              It's fairly easy to get involved with the lightning talks as either a speaker or an audience member.
+            </p>
+            <p>
+              As an audience member:
+            </p>
+            <ol>
+              <li>Sign up for an <%=link_to 'account', new_user_registration_path %></li>
+              <li>Upvote <%= link_to 'topics', talks_path %> of interest</li>
+              <li>Add a <%= link_to 'new topic', new_talk_path %></li>
+            </ol>
+            <p>
+              As a speaker:
+            </p>
+            <ol>
+              <li>Sign up for an <%=link_to 'account', new_user_registration_path %></li>
+              <li>Upvote <%= link_to 'topics', talks_path %> of interest</li>
+              <li>Add a <%= link_to 'topic', new_talk_path %> you want to give a talk on</li>
+              <li>Find the topic youw ant to give a talk on</li>
+              <li>Click the <em>Unassigned</em> button to assign the talk to yourself</li>
+              <li>Contact a Lightning Talk admin in Slack for scheduling (<%= link_to '@kenmazaika', 'https://thefirehoseproject.slack.com/messages/@kenmazaika', target: '_blank' %>, <%= link_to '@colinrubbert', 'https://thefirehoseproject.slack.com/messages/@colinrubbert', target: '_blank' %>, &amp; <%= link_to '@david.savatski', 'https://thefirehoseproject.slack.com/messages/@david.savatski', target: '_blank' %>)</li>
+              <li>Bring your amazing talk &amp; your 'A' game to the night of your talk</li>
+            </ol>
+          </div>
+        </div> <!-- End How -->
+      </div>
+
+      <div class="info-box-wrapper">
+        <h2 class="info-box-title">Where?</h2>
+        <div class="info-box-description">
+          <h4>Location:</h4>
+          <p>
+            <i class="fa fa-map-marker" aria-hidden="true"></i> On the interwebs of course! It's hosted in the same place as office hours &amp; you'll get an email &amp; Slack notification with the link
+          </p>
+          <h4>When:</h4>
+          <p>
+            <i class="fa fa-calendar" aria-hidden="true"></i> Thursday of the scheduled date (will be announced 2-4 weeks in advance)
+          </p>
+          <h4>Time:</h4>
+          <p>
+            <i class="fa fa-clock-o" aria-hidden="true"></i> 8pm EST
+          </p>
+          <h4>What to bring:</h4>
+          <p>
+            Your funky self... and a general curiousity &amp; your peer support
+          </p>
+        </div>
+        <h5>Curious what the current topics are or want to watch previously recorded talks? Check the links below:</h5>
+        <div class="info-box-button-wrapper">
+          <%= link_to 'Talk Topics', talks_path, class: 'button button-green' %>
+          <%= link_to 'YouTube Videos', 'https://www.youtube.com/channel/UCgbbrNl4-ivVXnmGADeY2rA', class: 'button button-red', target: '_blank' %>
+        </div>
+      </div> <!-- End Where -->
+    </div>
+  </section>
+</section>

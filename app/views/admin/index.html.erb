@@ -1,0 +1,43 @@
+<section id="admin">
+  <div class="container">
+    <h1 class="center">Admin Panel</h1>
+
+    <section>
+      <h3 class="center">Active Admins</h3>
+      <div class="admin-wrapper">
+        <% User.all.each do |u| %>
+          <% if u.admin %>
+            <div class="content-wrapper">
+              <h5><%= u.first_name %> <%= u.last_name %></h5>
+              <h6><%= u.email %></h6>
+              <%= link_to "Remove Admin?", admin_path(u.id), :method => :put, :data => {:confirm => "Are you sure?"}, class: 'button button-red' %>
+            </div>
+          <% end %>
+        <% end %>
+      </div> <!-- End Active Admins -->
+    </section>
+
+    <section>
+      <h3 class="center">Current Users</h3>
+      <div class="user-wrapper">
+        <% @users.each do |u| %>
+          <div class="content-wrapper">
+            <h5><%= u.first_name %> <%= u.last_name %><h5>
+            <h6><%= u.email %></h6>
+            <% if ! u.admin %>
+              <%= link_to "Make Admin?", admin_path(u.id), :method => :put, :data => {:confirm => "Are you sure?"}, class: 'button' %>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+    </section> <!-- End User List -->
+
+    <section>
+      <h3 class="center">Upcoming Talks</h3>
+      <div class="admin-card-wrapper">
+        <%= render Talk.scheduled %>
+      </div> <!-- End Upcoming Talks -->
+    </section>
+
+  </div> <!-- End Container -->
+</section>

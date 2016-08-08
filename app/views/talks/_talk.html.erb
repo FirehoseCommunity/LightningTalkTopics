@@ -1,46 +1,38 @@
-<div class="ice-index col-xs-12 col-sm-6 col-md-4">
-  <h2><%= link_to talk.topic, talk_path(talk) %></h2>
-  <br />
-  <h4><%= truncate talk.description, length: 80 %></h4>
-  
-  <% if talk.description.length > 80 %>
-    <p><%= link_to "Read More...", talk_path(talk) %></p>
-  <% end %>
-  
-  <% if talk.assignee %>
-    <p>Talk is assigned to: <span class="assignee"><%= talk.assignee.first_name %> <%= talk.assignee.last_name.first %></span></p>
-  <% end %>
-  
-  <% if talk.speak_date.present? %>
-    <p>Lightning talk date: <%= link_to talk.speak_date, roster_path(:date => talk.speak_date) %></p>
-  <% end %>
+<div class="card-container">
+  <div class="card-wrapper">
+    <h3 class="card-title"><%= link_to talk.topic, talk_path(talk) %></h3>
+    <p class="card-description"><%= truncate talk.description, length: 80 %></p>
+    <% if talk.description.length > 80 %>
+      <p><%= link_to "Read More...", talk_path(talk) %></p>
+    <% end %>
 
-  <div class="row align-bottom">
-    <hr class="custom-hr" />
-    <div class="col-xs-12 col-sm-6 col-md-6 text-center">
-      <%= button_to upvote_talk_path(talk), class: "btn btn-md btn-info custom-button", method: :post do %>
-        <span class="glyphicon glyphicon-thumbs-up"></span>&nbsp;
-        <span class="badge"><%= talk.votes_count %></span>
+    <div class="card-meta-info-wrapper">
+      <% if talk.assignee %>
+        <p>Talk is assigned to: <span class="assignee"><%= talk.assignee.first_name %> <%= talk.assignee.last_name.first %></span></p>
+      <% end %>
+
+      <% if talk.speak_date.present? %>
+        <p>Lightning talk date: <%= link_to talk.speak_date, roster_path(:date => talk.speak_date) %></p>
       <% end %>
     </div>
 
-    <br class="visible-xs hidden-sm hidden-md" />
-    <br class="visible-xs hidden-sm hidden-md" />
-
-    <div class="col-xs-12 col-sm-6 col-md-6 text-center">    
+    <div class="card-button-wrapper">
+      <%= button_to upvote_talk_path(talk), class: "button button-blue", method: :post do %>
+        <span><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>  <%= talk.votes_count %></span>
+      <% end %>
       <% if talk.assignee %>
         <%= link_to unassign_talk_path(talk), method: :put do %>
-          <button class="btn btn-md btn-success custom-button" type="button">
-            Assigned <span class="glyphicon glyphicon-ok"></span>
+          <button class="button button-green" type="button">
+            <span><i class="fa fa-check" aria-hidden="true"></i>  Assigned</span>
           </button>
         <% end %>
       <% else %>
         <%= link_to assign_talk_path(talk), method: :put do %>
-          <button class="btn btn-md btn-default custom-button" type="button">
+          <button class="button" type="button">
             Unassigned
           </button>
         <% end %>
       <% end %>
-    </div>
-  </div>
-</div>
+    </div> <!-- End Button Wrapper -->
+  </div> <!-- End Card Wrapper -->
+</div> <!-- End Card Container -->

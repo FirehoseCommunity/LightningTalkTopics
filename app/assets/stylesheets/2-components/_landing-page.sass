@@ -1,0 +1,106 @@
+// Landing Page Styling
+#landing,
+#hero,
+#content
+  width: 100%
+  margin: 0
+  padding: 0
+
+// Hero Section
+.hero-container
+  display: flex
+  flex-direction: column
+  justify-content: center
+  background: url('/assets/night_sky.jpg') 50% 50%
+  background-size: cover
+  width: auto
+  height: 200px
+
+.hero-content-wrapper
+  margin: 0 auto
+  text-align: center
+  display: flex
+  flex-direction: column
+  justify-content: center
+  color: $white
+
+.hero-title
+  margin-bottom: 0
+
+@media screen and (min-width: $mobile-breakpoint)
+  .hero-container
+    height: 300px
+
+  .hero-title
+    font-size: 2.25rem
+    line-height: 2.5rem
+
+  .hero-subtitle
+    font-size: 1.5rem
+
+@media screen and (min-width: $tablet-breakpoint)
+  .hero-container
+    height: 400px
+
+  .hero-title
+    font-size: 2.5rem
+    line-height: 2.75rem
+
+  .hero-subtitle
+    font-size: 1.75rem
+
+// Info Box Styling
+#content
+
+.info-box-container
+  display: flex
+  flex-direction: column
+
+.info-box-wrapper
+  display: flex
+  flex-direction: column
+  flex: 0 0 100%
+  padding: 20px
+  li
+    text-indent: -.8em
+    list-style: none
+    font-size: 1.25rem
+    font-weight: 200
+    line-height: 1.2
+    padding-bottom: 10px
+    a
+      text-decoration: none
+      color: $primary-red
+      transition: .3s ease-in-out
+      &:hover
+        font-weight: 700
+  li:before
+    content: "\2022 "
+    font-size: 1.25rem
+    color: $primary-blue
+    position: relative
+    left: -10px
+
+
+.info-box-description
+  i
+    padding-right: 10px
+
+.info-box-button-wrapper
+  display: flex
+  flex-direction: column
+  justify-content: center
+  text-align: center
+  a
+    color: $secondary-text-color
+    text-decoration: none
+  .button
+    margin: 10px 0
+
+.info-box-alt
+  background-color: $background-color
+
+@media screen and (min-width: $tablet-breakpoint)
+  .info-box-wrapper
+    width: 60%
+    margin: 0 auto

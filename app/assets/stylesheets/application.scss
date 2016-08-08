@@ -11,8 +11,20 @@
  * file per style scope.
  *
  *= require_self
- *= require_tree .
  */
 
-@import "bootstrap-sprockets";
-@import "bootstrap";
+/* Font Awesome Imports */
+ @import "font-awesome-sprockets";
+ @import "font-awesome";
+
+ /* Site Sass Imports */
+ @import '1-base/fonts';
+ @import '1-base/variables';
+ @import '1-base/typography';
+ @import '1-base/global';
+ @import '2-components/navigation';
+ @import '2-components/search';
+ @import '2-components/cards';
+ @import '2-components/landing-page';
+ @import '2-components/admin';
+ @import '2-components/footer';

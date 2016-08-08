@@ -10,7 +10,7 @@
             <div class="content-wrapper">
               <h5><%= u.first_name %> <%= u.last_name %></h5>
               <h6><%= u.email %></h6>
-              <%= link_to "Remove Admin?", admin_path(u.id, admin: true), :method => :put, :data => {:confirm => "Are you sure?"}, class: 'button button-red' %>
+              <%= link_to "Remove Admin?", admin_path(u.id), :method => :put, :data => {:confirm => "Are you sure?"}, class: 'button button-red' %>
             </div>
           <% end %>
         <% end %>
@@ -25,7 +25,7 @@
             <h5><%= u.first_name %> <%= u.last_name %><h5>
             <h6><%= u.email %></h6>
             <% if ! u.admin %>
-              <%= link_to "Make Admin?", admin_path(u.id, admin: true), :method => :put, :data => {:confirm => "Are you sure?"}, class: 'button' %>
+              <%= link_to "Make Admin?", admin_path(u.id), :method => :put, :data => {:confirm => "Are you sure?"}, class: 'button' %>
             <% end %>
           </div>
         <% end %>

@@ -1,4 +1,6 @@
 class AdminController < ApplicationController
+  before_action :authenticate_user!
+  before_action :is_admin?
 
   def index
     @users = User.all
@@ -13,6 +15,14 @@ class AdminController < ApplicationController
       u.update_attributes(admin: false)
     end
     redirect_to admin_index_path
+  end
+
+  private
+
+  def is_admin?
+    unless current_user && current_user.admin?
+      redirect_to root_path, :flash => { :alert => "Need to be an Admin to access this page."}
+    end
   end
 
 end

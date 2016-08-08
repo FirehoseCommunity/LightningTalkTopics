@@ -37,11 +37,8 @@ class AdminControllerTest < ActionController::TestCase
     sign_in user
 
     get :index
-    assert_select "ul.navigation-links-wrapper" do
-      assert_select "li" do
-        assert_select "Admin", 0
-      end
-    end
+    assert_redirected_to root_path
+    assert_equal "Need to be an Admin to access this page.", flash[:alert]
   end
 
 end

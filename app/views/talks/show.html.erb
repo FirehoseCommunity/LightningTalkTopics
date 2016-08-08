@@ -20,14 +20,14 @@
       <div class="card-schedule-wrapper">
         <% if @talk.speak_date.nil? %>
           <h3>Schedule this talk: </h3>
-          <%= form_for(@talk) do |f| %>
+          <%= simple_form_for(@talk) do |f| %>
             <%= f.date_select(:speak_date, order: [:month, :day, :year]) %>
             <%= f.submit "Schedule", class: 'button' %>
           <% end %>
         <% else %>
           <h4>This talk is scheduled for:
           <%= @talk.speak_date %></h4>
-          <%= form_for(@talk) do |f| %>
+          <%= simple_form_for(@talk) do |f| %>
             <%= f.hidden_field(:speak_date, value: nil) %>
             <%= f.submit "Reset", class: 'button' %>
           <% end %>

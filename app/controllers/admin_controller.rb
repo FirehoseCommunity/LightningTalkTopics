@@ -6,7 +6,8 @@ class AdminController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-    @user.toggle!(:admin)
+    u = @user
+    u.toggle!(:admin)
     redirect_to admin_index_path
   end
 

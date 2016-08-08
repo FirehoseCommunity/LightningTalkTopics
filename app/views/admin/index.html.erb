@@ -6,12 +6,11 @@
       <h3 class="center">Active Admins</h3>
       <div class="admin-wrapper">
         <% User.all.each do |u| %>
-          <% if u.admin == true %>
+          <% if u.admin %>
             <div class="content-wrapper">
               <h5><%= u.first_name %> <%= u.last_name %></h5>
               <h6><%= u.email %></h6>
-              <% @user = u %>
-              <%= link_to "Remove Admin?", admin_path(@user.id, admin: true), :method => :put, :data => {:confirm => "Are you sure?"}, class: 'button button-red' %>
+              <%= link_to "Remove Admin?", admin_path(u.id, admin: true), :method => :put, :data => {:confirm => "Are you sure?"}, class: 'button button-red' %>
             </div>
           <% end %>
         <% end %>
@@ -25,9 +24,8 @@
           <div class="content-wrapper">
             <h5><%= u.first_name %> <%= u.last_name %><h5>
             <h6><%= u.email %></h6>
-            <% if u.admin == false %>
-              <% @user = u %>
-              <%= link_to "Make Admin?", admin_path(@user.id, admin: true), :method => :put, :data => {:confirm => "Are you sure?"}, class: 'button' %>
+            <% if ! u.admin %>
+              <%= link_to "Make Admin?", admin_path(u.id, admin: true), :method => :put, :data => {:confirm => "Are you sure?"}, class: 'button' %>
             <% end %>
           </div>
         <% end %>

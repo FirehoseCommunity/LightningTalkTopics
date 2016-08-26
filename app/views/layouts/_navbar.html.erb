@@ -2,8 +2,7 @@
   <div class="container navigation-container">
     <div class="brand-wrapper">
       <img class="brand-logo" src="/assets/firehose_logo.png" alt="The Firehose Project Logo" />
-      <%= link_to 'Firehose Project', root_path, class: "brand-title" %>
-      <%= link_to 'Firehose', root_path, class: "brand-title-alt" %>
+      <%= link_to 'Lightning Talks', root_path, class: "brand-title" %>
     </div> <!-- End Brand Wrapper -->
 
     <div class="navigation-links-container">
@@ -12,6 +11,7 @@
         <% if user_signed_in? && current_user.admin %>
           <li><%= link_to "Admin", admin_index_path %></li>
         <% end %>
+        <li><%= link_to 'Lightning Talks', root_path, class: "brand-title-alt" %></li>
         <li>Firehose Links
           <ul class="navigation-dropdown-menu">
             <li><%= link_to "theFirehoseProject", "http://www.thefirehoseproject.com/", target: "_blank" %></li>

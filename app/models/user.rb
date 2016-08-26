@@ -21,6 +21,6 @@ class User < ActiveRecord::Base
   end
 
   def unassign(talk)
-    talk.update(assignee: nil) if talk.assignee == self
+    talk.update(assignee: nil) if talk.assignee == self || self.admin?
   end
 end

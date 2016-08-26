@@ -67,6 +67,17 @@ class TalksControllerTest < ActionController::TestCase
     assert_equal user, talk.assignee
   end
 
+  test "admin user can unassign talk from other user" do
+    talk = FactoryGirl.create(:topic)
+    user = FactoryGirl.create(:user)
+    user.assign(talk)
+    admin = FactoryGirl.create(:admin)
+    sign_in admin
+    put :unassign, id: talk.id
+    talk.reload
+    assert talk.assignee.nil?
+  end
+  
   test "can assign talk to self" do
     talk = FactoryGirl.create(:topic)
     user = FactoryGirl.create(:user)

@@ -79,22 +79,6 @@
       transition: $transition
       color: $primary-blue
 
-.navigation-dropdown-menu
-  display: none
-  list-style: none
-  padding: 0
-  margin: 0
-  li
-    padding: 10px
-  a
-    transition: $transition
-
-li:hover > .navigation-dropdown-menu
-  display: flex
-  flex-direction: column
-  padding-top: 20px
-  a:hover
-    color: $primary-blue
 
 @media screen and (min-width: $tablet-breakpoint)
   .navigation-links-wrapper
@@ -105,24 +89,6 @@ li:hover > .navigation-dropdown-menu
     li
       margin-left: 20px
       margin-bottom: 0
-
-  .navigation-dropdown-menu
-    border: 1px solid $light-gray
-    border-top: 1px solid transparent
-    background-color: $white
-    border-radius: 3px
-    opacity: 0
-    transform: translateY(-60%)
-    transition: .3s ease-in-out .1s
-    li
-      margin-left: 0
-    &:hover
-      opacity: 1
-      transform: translateY(0%)
-
-  li:hover > .navigation-dropdown-menu
-    display: block
-    position: absolute
 
   .mobile-navigation-toggle
     display: none
